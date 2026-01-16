@@ -4,7 +4,7 @@ import MobilePriceCalculator from './MobilePriceCalculator';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50">
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary-200/40 to-primary-300/30 rounded-full blur-3xl animate-float-slow" />
@@ -18,9 +18,11 @@ const HeroSection = () => {
         backgroundSize: '60px 60px'
       }} />
 
-      {/* ============ UPPER SECTION ============ */}
-      <div className="relative z-10 flex items-center pt-12 lg:pt-8 pb-4 lg:pb-2">
-        <div className="container mx-auto px-4">
+      {/* Content Wrapper - centers all content vertically */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-center py-8 lg:py-12">
+        
+        {/* ============ UPPER SECTION ============ */}
+        <div className="container mx-auto px-4 pb-6 lg:pb-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
             {/* Left Column: Badge, Headline, Subheadline */}
@@ -90,11 +92,9 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ============ LOWER SECTION - Price Calculator ============ */}
-      <div id="price-calculator" className="relative z-10 flex items-center pt-4 lg:pt-2 pb-12 lg:pb-8">
-        <div className="container mx-auto px-4">
+        {/* ============ LOWER SECTION - Price Calculator ============ */}
+        <div id="price-calculator" className="container mx-auto px-4 pt-6 lg:pt-8">
           {/* Desktop: Horizontal Calculator */}
           <div className="hidden lg:block animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <HorizontalPriceCalculator />
