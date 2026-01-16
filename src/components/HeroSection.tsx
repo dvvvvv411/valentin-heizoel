@@ -185,16 +185,16 @@ const HeroSection = () => {
                 </Carousel>
                 
                 {/* Pagination Dots - Tiny and subtle */}
-                <div className="flex justify-center gap-1 mt-3">
+                <div className="flex justify-center gap-1.5 mt-4">
                   {uspData.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => api?.scrollTo(index)}
                       className={cn(
-                        "rounded-full transition-all duration-300",
+                        "carousel-dot rounded-full transition-all duration-300 !min-h-0 !min-w-0",
                         current === index 
-                          ? "h-1 w-2.5 bg-primary-500" 
-                          : "w-1 h-1 bg-gray-300/60 hover:bg-gray-400/80"
+                          ? "h-1.5 w-4 bg-primary-500" 
+                          : "w-1.5 h-1.5 bg-gray-300/60 hover:bg-gray-400/80"
                       )}
                       aria-label={`Go to slide ${index + 1}`}
                     />
@@ -202,15 +202,12 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Trust Statistics - Enhanced Design */}
+              {/* Trust Statistics - Clean Design */}
               <div 
-                className="relative animate-fade-in group"
+                className="animate-fade-in"
                 style={{ animationDelay: '0.5s' }}
               >
-                {/* Gradient Border Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-accent-orange-400 to-primary-400 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
-                
-                <div className="relative p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-white/80 shadow-medium">
+                <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                   <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center gap-2">
                     <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
                     Vertrauen Sie auf Erfahrung
