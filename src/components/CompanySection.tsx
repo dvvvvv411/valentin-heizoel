@@ -77,12 +77,12 @@ const CompanySection = () => {
           {/* Company Story */}
           <div className="space-y-6">
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
-              Unsere <span className="text-primary-600">Geschichte</span>
+              Unsere <span className="text-accent-orange-600">Geschichte</span>
             </h3>
             
             <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
-              <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-primary-600 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden 
+              <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-orange-600 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden
                 Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen 
                 in Mainz begann, ist heute ein zuverlässiger Partner für über 100.000 
                 Kunden in ganz Deutschland.

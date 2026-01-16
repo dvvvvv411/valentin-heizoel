@@ -20,10 +20,10 @@ export default {
 		extend: {
 			colors: {
 				// Design System Farben
-				hill: {
-					green: '#006b51',
-					'green-dark': '#005a44',
-					'green-light': '#007d5e',
+			hill: {
+					green: '#e03c20',
+					'green-dark': '#c73418',
+					'green-light': '#f25538',
 					white: '#ffffff',
 					gray: '#f8f9fa',
 					'gray-light': '#ffffff',
@@ -55,18 +55,18 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#006b51',
+					DEFAULT: '#e03c20',
 					foreground: '#ffffff',
-					50: '#f0fdf4',
-					100: '#dcfce7',
-					200: '#bbf7d0',
-					300: '#86efac',
-					400: '#4ade80',
-					500: '#006b51',
-					600: '#005a44',
-					700: '#004a37',
-					800: '#003a2a',
-					900: '#002a1d'
+					50: '#fef2f2',
+					100: '#fee2e2',
+					200: '#fecaca',
+					300: '#fca5a5',
+					400: '#f87171',
+					500: '#e03c20',
+					600: '#c73418',
+					700: '#b91c1c',
+					800: '#991b1b',
+					900: '#7f1d1d'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -231,10 +231,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(0, 107, 81, 0.3)'
+						boxShadow: '0 0 20px rgba(224, 60, 32, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(0, 107, 81, 0.5)'
+						boxShadow: '0 0 40px rgba(224, 60, 32, 0.5)'
 					}
 				}
 			},
@@ -262,8 +262,8 @@ export default {
 				'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
 				'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 25px -5px rgba(0, 0, 0, 0.08)',
 				'glass': '0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)',
-				'premium': '0 20px 60px -15px rgba(0, 107, 81, 0.2), 0 10px 30px -10px rgba(0, 0, 0, 0.1)',
-				'glow-primary': '0 0 30px rgba(0, 107, 81, 0.25), 0 0 60px rgba(0, 107, 81, 0.1)',
+				'premium': '0 20px 60px -15px rgba(224, 60, 32, 0.2), 0 10px 30px -10px rgba(0, 0, 0, 0.1)',
+				'glow-primary': '0 0 30px rgba(224, 60, 32, 0.25), 0 0 60px rgba(224, 60, 32, 0.1)',
 				'glow-orange': '0 0 30px rgba(224, 60, 32, 0.25), 0 0 60px rgba(224, 60, 32, 0.1)',
 			},
 			backdropBlur: {

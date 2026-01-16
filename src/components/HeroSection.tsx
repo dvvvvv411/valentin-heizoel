@@ -21,7 +21,7 @@ const HeroSection = () => {
 
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `linear-gradient(#006b51 1px, transparent 1px), linear-gradient(90deg, #006b51 1px, transparent 1px)`,
+        backgroundImage: `linear-gradient(#e03c20 1px, transparent 1px), linear-gradient(90deg, #e03c20 1px, transparent 1px)`,
         backgroundSize: '60px 60px'
       }} />
 
