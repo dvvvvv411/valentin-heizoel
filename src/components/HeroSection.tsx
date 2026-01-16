@@ -19,7 +19,7 @@ const HeroSection = () => {
       }} />
 
       {/* Content Wrapper - centers all content vertically */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-center py-8 lg:py-12">
+      <div className="relative z-10 min-h-screen flex flex-col justify-center pt-28 lg:pt-32 pb-8 lg:pb-12">
         
         {/* ============ UPPER SECTION ============ */}
         <div className="container mx-auto px-4 pb-6 lg:pb-8">
