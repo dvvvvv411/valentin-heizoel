@@ -194,6 +194,48 @@ export default {
 					'50%': {
 						transform: 'translateY(-5px)'
 					}
+				},
+				'float-slow': {
+					'0%, 100%': {
+						transform: 'translateY(0px) scale(1)'
+					},
+					'50%': {
+						transform: 'translateY(-20px) scale(1.05)'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
+				},
+				'gradient-shift': {
+					'0%, 100%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					}
+				},
+				'blur-in': {
+					'0%': {
+						opacity: '0',
+						filter: 'blur(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						filter: 'blur(0)'
+					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(0, 107, 81, 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(0, 107, 81, 0.5)'
+					}
 				}
 			},
 			animation: {
@@ -204,7 +246,12 @@ export default {
 				'scale-in': 'scale-in 0.3s ease-out',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'float-slow': 'float-slow 6s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'gradient-shift': 'gradient-shift 3s ease infinite',
+				'blur-in': 'blur-in 0.5s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite'
 			},
 			spacing: {
 				'18': '4.5rem',
@@ -214,6 +261,14 @@ export default {
 				'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
 				'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.04)',
 				'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 25px -5px rgba(0, 0, 0, 0.08)',
+				'glass': '0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04)',
+				'premium': '0 20px 60px -15px rgba(0, 107, 81, 0.2), 0 10px 30px -10px rgba(0, 0, 0, 0.1)',
+				'glow-primary': '0 0 30px rgba(0, 107, 81, 0.25), 0 0 60px rgba(0, 107, 81, 0.1)',
+				'glow-orange': '0 0 30px rgba(224, 60, 32, 0.25), 0 0 60px rgba(224, 60, 32, 0.1)',
+			},
+			backdropBlur: {
+				'xs': '2px',
+				'3xl': '64px',
 			}
 		}
 	},

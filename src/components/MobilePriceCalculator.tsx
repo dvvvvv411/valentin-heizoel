@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Truck, Shield, Clock, Calculator, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Truck, Shield, Clock, Calculator, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
@@ -145,24 +145,27 @@ const MobilePriceCalculator = () => {
 
   return (
     <div className="w-full max-w-sm mx-auto">
-      <Card className="shadow-xl border-0 bg-white/95 backdrop-blur-sm">
-        <CardHeader className="text-center pb-4">
-          <CardTitle className="text-xl font-bold text-gray-800 flex items-center justify-center gap-2">
-            <Calculator className="w-5 h-5 text-primary-600" />
+      <Card className="glass-card border-0 rounded-2xl overflow-hidden">
+        <CardHeader className="text-center pb-4 bg-gradient-to-br from-white/80 to-white/40">
+          <div className="inline-flex items-center justify-center gap-2 mb-2">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-soft">
+              <Calculator className="w-5 h-5 text-white" />
+            </div>
+          </div>
+          <CardTitle className="text-xl font-bold text-gray-800">
             Preisrechner
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          {/* Product Selection - Improved with navigation */}
+        <CardContent className="space-y-6 p-5">
+          {/* Product Selection */}
           <div className="space-y-3">
-            <Label className="text-base font-medium">Heizöltyp wählen</Label>
+            <Label className="text-sm font-semibold text-gray-700">Heizöltyp wählen</Label>
             
-            {/* Navigation and scroll indicators */}
             <div className="relative">
               {/* Navigation buttons */}
               <button
                 onClick={() => scrollToProduct('left')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 rounded-full p-1 shadow-md transition-all duration-200"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/90 hover:bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-soft transition-all duration-200 hover:scale-110"
                 aria-label="Vorheriges Produkt"
               >
                 <ChevronLeft size={16} className="text-gray-600" />
@@ -170,30 +173,30 @@ const MobilePriceCalculator = () => {
               
               <button
                 onClick={() => scrollToProduct('right')}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white border border-gray-200 rounded-full p-1 shadow-md transition-all duration-200"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white/90 hover:bg-white border border-gray-200 rounded-full flex items-center justify-center shadow-soft transition-all duration-200 hover:scale-110"
                 aria-label="Nächstes Produkt"
               >
                 <ChevronRight size={16} className="text-gray-600" />
               </button>
 
-              {/* Scrollable container with improved visibility */}
+              {/* Scrollable container */}
               <div 
                 ref={scrollRef}
-                className="flex gap-3 overflow-x-auto scrollbar-hide px-8 py-2"
+                className="flex gap-3 overflow-x-auto scrollbar-hide px-10 py-2"
                 style={{ 
                   scrollbarWidth: 'none', 
                   msOverflowStyle: 'none',
                   scrollSnapType: 'x mandatory'
                 }}
               >
-                {products.map((product, index) => (
+                {products.map((product) => (
                   <div
                     key={product.id}
                     className={cn(
-                      "flex-shrink-0 w-44 p-3 border-2 rounded-lg cursor-pointer transition-all duration-200 scroll-snap-align-start",
+                      "flex-shrink-0 w-44 p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 scroll-snap-align-start",
                       oilType === product.id 
-                        ? "border-accent-orange-500 bg-accent-orange-50 shadow-md scale-105" 
-                        : "border-gray-200 bg-white hover:border-accent-orange-300 hover:shadow-sm"
+                        ? "border-primary-500 bg-gradient-to-br from-primary-50 to-white shadow-premium scale-105" 
+                        : "border-gray-200 bg-white/80 hover:border-primary-300 hover:shadow-soft"
                     )}
                     onClick={() => selectProduct(product.id)}
                   >
@@ -202,10 +205,10 @@ const MobilePriceCalculator = () => {
                       <p className="text-xl font-bold text-accent-orange-600 mb-1">
                         {product.price.toFixed(2)}€/L
                       </p>
-                      <p className="text-xs text-gray-600 mb-2">{product.description}</p>
+                      <p className="text-xs text-gray-500 mb-2">{product.description}</p>
                       <div className="flex flex-wrap gap-1 justify-center">
                         {product.features.map((feature, idx) => (
-                          <span key={idx} className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          <span key={idx} className="text-xs bg-gray-100 px-2 py-1 rounded-full">
                             {feature}
                           </span>
                         ))}
@@ -216,14 +219,14 @@ const MobilePriceCalculator = () => {
               </div>
 
               {/* Scroll indicators */}
-              <div className="flex justify-center mt-2 gap-1">
+              <div className="flex justify-center mt-3 gap-2">
                 {products.map((_, index) => (
                   <div
                     key={index}
                     className={cn(
-                      "w-2 h-2 rounded-full transition-all duration-200",
+                      "w-2 h-2 rounded-full transition-all duration-300",
                       index === products.findIndex(p => p.id === oilType)
-                        ? "bg-accent-orange-500" 
+                        ? "bg-primary-500 w-6" 
                         : "bg-gray-300"
                     )}
                   />
@@ -234,14 +237,14 @@ const MobilePriceCalculator = () => {
 
           {/* Liter Input with Touch Controls */}
           <div className="space-y-3">
-            <Label htmlFor="liters" className="text-base font-medium">
-              Liter-Anzahl ({minLiters} - {maxLiters}L)
+            <Label htmlFor="liters" className="text-sm font-semibold text-gray-700">
+              Liter-Anzahl ({minLiters.toLocaleString()} - {maxLiters.toLocaleString()}L)
             </Label>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center gap-3">
               <Button
                 type="button"
                 variant="outline"
-                className="flex-shrink-0 w-12 h-12 p-0 border-accent-orange-300 hover:bg-accent-orange-50"
+                className="flex-shrink-0 w-12 h-12 p-0 rounded-xl border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all duration-300"
                 onClick={() => adjustLiters(-100)}
                 disabled={litersNum <= minLiters}
               >
@@ -255,13 +258,13 @@ const MobilePriceCalculator = () => {
                 step={50}
                 value={liters}
                 onChange={handleLitersChange}
-                className="text-center text-lg h-12 flex-1"
+                className="text-center text-lg h-12 flex-1 rounded-xl border-gray-200 bg-white/80 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
                 inputMode="numeric"
               />
               <Button
                 type="button"
                 variant="outline"
-                className="flex-shrink-0 w-12 h-12 p-0 border-accent-orange-300 hover:bg-accent-orange-50"
+                className="flex-shrink-0 w-12 h-12 p-0 rounded-xl border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all duration-300"
                 onClick={() => adjustLiters(100)}
                 disabled={litersNum >= maxLiters}
               >
@@ -269,85 +272,98 @@ const MobilePriceCalculator = () => {
               </Button>
             </div>
             {liters !== '' && litersNum < minLiters && (
-              <p className="text-sm text-red-600 text-center">
-                Mindestbestellmenge: {minLiters} Liter
+              <p className="text-sm text-red-500 text-center flex items-center justify-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+                Mindestbestellmenge: {minLiters.toLocaleString()} Liter
               </p>
             )}
             {liters !== '' && litersNum > maxLiters && (
-              <p className="text-sm text-red-600 text-center">
-                Maximalmenge: {maxLiters} Liter
+              <p className="text-sm text-red-500 text-center flex items-center justify-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+                Maximalmenge: {maxLiters.toLocaleString()} Liter
               </p>
             )}
-            <div className="flex justify-center space-x-2">
+            <div className="flex justify-center gap-2">
               {[1500, 2000, 5000, 10000].map((amount) => (
                 <Button
                   key={amount}
                   type="button"
                   variant="outline"
                   size="sm"
-                  className="text-xs px-3 py-1 h-8 border-accent-orange-300 hover:bg-accent-orange-50 hover:border-accent-orange-500"
+                  className={cn(
+                    "text-xs px-3 py-1.5 h-8 rounded-lg transition-all duration-300",
+                    litersNum === amount 
+                      ? "border-primary-500 bg-primary-50 text-primary-700" 
+                      : "border-gray-200 hover:border-primary-300 hover:bg-primary-50"
+                  )}
                   onClick={() => setLiters(amount.toString())}
                 >
-                  {amount}L
+                  {amount.toLocaleString()}L
                 </Button>
               ))}
             </div>
           </div>
 
           {/* Price Display */}
-          <div className="bg-gradient-to-r from-primary-50 to-accent-orange-50 p-4 rounded-lg space-y-2 border border-accent-orange-200">
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>Produkt:</span>
-              <span className="font-medium">{currentProduct.name}</span>
-            </div>
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>Menge:</span>
-              <span className="font-medium">{liters || '—'} Liter</span>
-            </div>
-            <div className="flex justify-between text-sm text-gray-600">
-              <span>Preis pro Liter:</span>
-              <span className="font-medium text-accent-orange-600">{currentPrice.toFixed(2)}€</span>
-            </div>
-            <div className="border-t pt-2">
-              <div className="flex justify-between items-center text-xl font-bold">
-                <span>Gesamtpreis:</span>
-                <span className="text-accent-orange-600">{canCalculate ? totalAmount.toFixed(2) : '—'}€</span>
+          <div className="relative overflow-hidden rounded-xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-orange-50 opacity-80" />
+            <div className="relative p-4 space-y-2 border border-primary-100/50 rounded-xl">
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>Produkt:</span>
+                <span className="font-semibold text-gray-800">{currentProduct.name}</span>
+              </div>
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>Menge:</span>
+                <span className="font-semibold text-gray-800">{liters ? Number(liters).toLocaleString() : '—'} Liter</span>
+              </div>
+              <div className="flex justify-between text-sm text-gray-600">
+                <span>Preis pro Liter:</span>
+                <span className="font-bold text-accent-orange-600">{currentPrice.toFixed(2)}€</span>
+              </div>
+              <div className="h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent my-2" />
+              <div className="flex justify-between items-center">
+                <span className="font-semibold text-gray-700">Gesamtpreis:</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-accent-orange-600 to-accent-orange-500 bg-clip-text text-transparent">
+                  {canCalculate ? totalAmount.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '—'}€
+                </span>
               </div>
             </div>
           </div>
 
           {/* Features */}
-          <div className="space-y-2 text-sm text-gray-600">
-            <div className="flex items-center space-x-2">
-              <Truck size={14} className="text-accent-orange-500" />
-              <span>Kostenlose Lieferung</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Clock size={14} className="text-primary-600" />
-              <span>Lieferung in 4-7 Werktagen</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Shield size={14} className="text-accent-orange-500" />
-              <span>Geprüfte DIN-Qualität</span>
-            </div>
+          <div className="grid grid-cols-1 gap-2">
+            {[
+              { icon: Truck, text: 'Kostenlose Lieferung', color: 'text-accent-orange-500', bg: 'bg-accent-orange-50' },
+              { icon: Clock, text: 'Lieferung in 4-7 Werktagen', color: 'text-primary-600', bg: 'bg-primary-50' },
+              { icon: Shield, text: 'Geprüfte DIN-Qualität', color: 'text-accent-orange-500', bg: 'bg-accent-orange-50' }
+            ].map((feature, index) => (
+              <div key={index} className="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/60">
+                <div className={`w-7 h-7 rounded-lg ${feature.bg} flex items-center justify-center`}>
+                  <feature.icon size={14} className={feature.color} />
+                </div>
+                <span className="text-sm text-gray-700">{feature.text}</span>
+              </div>
+            ))}
           </div>
 
           {/* Order Button */}
           <Button 
             onClick={handleOrder}
             disabled={isLoading || !canCalculate}
-            className="w-full bg-accent-orange-500 hover:bg-accent-orange-600 text-white h-14 text-lg font-semibold transition-all duration-200 hover:scale-105"
+            className="relative overflow-hidden w-full bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white h-14 text-lg font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl shadow-premium disabled:opacity-50 disabled:hover:scale-100 group"
           >
             {isLoading ? (
-              <div className="flex items-center space-x-2">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 <span>Wird verarbeitet...</span>
               </div>
             ) : (
-              <>
-                <span>{canCalculate ? `Jetzt bestellen - ${totalAmount.toFixed(2)}€` : 'Jetzt bestellen'}</span>
-              </>
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <Sparkles className="w-5 h-5" />
+                {canCalculate ? `Jetzt bestellen - ${totalAmount.toLocaleString('de-DE', { minimumFractionDigits: 2 })}€` : 'Jetzt bestellen'}
+              </span>
             )}
+            <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity" />
           </Button>
         </CardContent>
       </Card>
