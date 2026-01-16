@@ -122,14 +122,19 @@
     @apply outline-none ring-2 ring-[#e03c20] ring-offset-2;
   }
 
-  /* Mobile touch targets */
-  button, 
+  /* Mobile touch targets - exclude carousel dots */
+  button:not(.carousel-dot), 
   a, 
   input, 
   select, 
   textarea {
     min-height: 44px;
     min-width: 44px;
+  }
+
+  /* Smooth Embla Carousel transitions */
+  .embla__container {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   /* Mobile input optimizations */
