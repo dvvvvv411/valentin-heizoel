@@ -4,7 +4,7 @@ import MobilePriceCalculator from './MobilePriceCalculator';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50 min-h-screen flex flex-col">
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary-200/40 to-primary-300/30 rounded-full blur-3xl animate-float-slow" />
@@ -19,7 +19,7 @@ const HeroSection = () => {
       }} />
 
       {/* ============ UPPER SECTION ============ */}
-      <div className="relative z-10 flex items-center pt-12 lg:pt-8 pb-4 lg:pb-2">
+      <div className="relative z-10 flex-1 flex items-center pt-12 lg:pt-8 pb-4 lg:pb-2">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
