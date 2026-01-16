@@ -150,7 +150,7 @@ const HeroSection = () => {
                       return (
                         <CarouselItem key={index} className="pl-0">
                           {/* Clean Card - matching Trust Statistics styling */}
-                          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]" style={{ backgroundColor: '#ffffff' }}>
                             {/* Decorative Header */}
                             <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
                               <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
