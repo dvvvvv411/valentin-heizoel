@@ -8,8 +8,8 @@ const Impressum = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Impressum | BIO HEAT Nord GmbH</title>
-        <meta name="description" content="Impressum und Kontaktdaten der BIO HEAT Nord GmbH, Flensburg. Alle rechtlichen Informationen und Unternehmensangaben." />
+        <title>Impressum | Valentin GmbH</title>
+        <meta name="description" content="Impressum und Kontaktdaten der Valentin GmbH, Mainz. Alle rechtlichen Informationen und Unternehmensangaben." />
       </Helmet>
       <Header />
 
@@ -33,7 +33,7 @@ const Impressum = () => {
               <CardContent className="space-y-3">
                 <div>
                   <h3 className="font-semibold text-gray-900">Firma:</h3>
-                  <p className="text-gray-700">BIO HEAT Nord GmbH</p>
+                  <p className="text-gray-700">Valentin GmbH</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Rechtsform:</h3>
@@ -41,15 +41,15 @@ const Impressum = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Handelsregister:</h3>
-                  <p className="text-gray-700">HRB 6561 FL</p>
+                  <p className="text-gray-700">HRB 4</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Registergericht:</h3>
-                  <p className="text-gray-700">Amtsgericht Flensburg</p>
+                  <p className="text-gray-700">Amtsgericht Mainz</p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">USt-IdNr.:</h3>
-                  <p className="text-gray-700">DE294051367</p>
+                  <p className="text-gray-700">DE280303368</p>
                 </div>
               </CardContent>
             </Card>
@@ -67,9 +67,9 @@ const Impressum = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Anschrift:</h3>
                     <p className="text-gray-700">
-                      BIO HEAT Nord GmbH<br />
-                      Lise-Meitner-Str. 22<br />
-                      24941 Flensburg<br />
+                      Valentin GmbH<br />
+                      Rheinallee 187<br />
+                      55120 Mainz<br />
                       Deutschland
                     </p>
                   </div>
@@ -79,7 +79,7 @@ const Impressum = () => {
                   <Mail className="text-primary-600" size={20} />
                   <div>
                     <h3 className="font-semibold text-gray-900">E-Mail:</h3>
-                    <p className="text-gray-700">info@bioheatnord.de</p>
+                    <p className="text-gray-700">info@valentin-heizoel.de</p>
                   </div>
                 </div>
               </CardContent>
@@ -91,7 +91,7 @@ const Impressum = () => {
               <CardTitle>Geschäftsführung</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700">Knud Björnskov Iversen</p>
+              <p className="text-gray-700">Julia Mündler</p>
             </CardContent>
           </Card>
 

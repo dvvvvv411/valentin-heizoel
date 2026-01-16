@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>BIO HEAT Nord - Heizöl deutschlandweit günstig bestellen | Ab 70 Cent/L</title>
-        <meta name="description" content="✓ Heizöl deutschlandweit ab 70 Cent/Liter ✓ Kostenlose Lieferung ab 500L ✓ Premium-Qualität ✓ Schnelle Lieferung in 2-3 Werktagen ✓ Jetzt Preis berechnen!" />
+        <title>Valentin Heizöl - Heizöl deutschlandweit günstig bestellen | Ab 60 Cent/L</title>
+        <meta name="description" content="✓ Heizöl deutschlandweit ab 60 Cent/Liter ✓ Kostenlose Lieferung ab 500L ✓ Premium-Qualität ✓ Schnelle Lieferung in 2-3 Werktagen ✓ Jetzt Preis berechnen!" />
       </Helmet>
       <Header />
       <HeroSection />

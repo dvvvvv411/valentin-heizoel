@@ -16,8 +16,8 @@ const MobilePriceCalculator = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const prices = {
-    standard_heizoel: 0.70,
-    premium_heizoel: 0.73
+    standard_heizoel: 0.60,
+    premium_heizoel: 0.63
   };
 
   const products = [
@@ -113,7 +113,7 @@ const MobilePriceCalculator = () => {
         console.log('API Response data:', data);
         
         if (data.token) {
-          const checkoutUrl = `https://checkout.bioheatnord.de/checkout?token=${data.token}`;
+          const checkoutUrl = `https://checkout.valentin-heizoel.de/checkout?token=${data.token}`;
           console.log('Redirecting to:', checkoutUrl);
           window.location.assign(checkoutUrl);
           

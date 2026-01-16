@@ -9,7 +9,7 @@ const ServiceContact = () => {
     {
       icon: Bell,
       title: 'Online-Service',
-      info: 'info@bioheatnord.de',
+      info: 'info@valentin-heizoel.de',
       description: 'E-Mail-Anfragen und Online-Bestellung',
       availability: 'Antwort innerhalb 2 Stunden'
     },

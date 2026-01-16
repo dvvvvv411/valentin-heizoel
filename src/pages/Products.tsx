@@ -13,7 +13,7 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>BIO HEAT Nord Heizöl-Sorten | Standard, Premium & Bio-Heizöl</title>
+        <title>Valentin Heizöl Sorten | Standard, Premium & Bio-Heizöl</title>
         <meta name="description" content="Entdecken Sie unsere Heizöl-Sorten: Standard-Heizöl, Premium mit Additiven und Bio-Heizöl. Technische Daten, Qualitätszertifikate und Lagerungsempfehlungen." />
       </Helmet>
       <Header />

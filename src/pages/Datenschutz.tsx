@@ -8,8 +8,8 @@ const Datenschutz = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Datenschutzerklärung | BIO HEAT Nord</title>
-        <meta name="description" content="Datenschutzerklärung von BIO HEAT Nord. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
+        <title>Datenschutzerklärung | Valentin Heizöl</title>
+        <meta name="description" content="Datenschutzerklärung von Valentin Heizöl. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
       </Helmet>
       <Header />
 
@@ -31,12 +31,12 @@ const Datenschutz = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <p className="font-semibold">BIO HEAT Nord GmbH</p>
-                <p>Lise-Meitner-Str. 22</p>
-                <p>24941 Flensburg</p>
+                <p className="font-semibold">Valentin GmbH</p>
+                <p>Rheinallee 187</p>
+                <p>55120 Mainz</p>
                 <p>Deutschland</p>
                 <p className="mt-4">
-                  <span className="font-semibold">E-Mail:</span> info@bioheatnord.de
+                  <span className="font-semibold">E-Mail:</span> info@valentin-heizoel.de
                 </p>
               </div>
             </CardContent>
@@ -150,7 +150,7 @@ const Datenschutz = () => {
                 Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns unter:
               </p>
               <div className="mt-3 space-y-1 text-gray-700 text-sm">
-                <p><span className="font-semibold">E-Mail:</span> info@bioheatnord.de</p>
+                <p><span className="font-semibold">E-Mail:</span> info@valentin-heizoel.de</p>
               </div>
             </CardContent>
           </Card>

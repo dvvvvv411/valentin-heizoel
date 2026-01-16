@@ -8,8 +8,8 @@ const AGB = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>AGB | Allgemeine Geschäftsbedingungen - BIO HEAT Nord</title>
-        <meta name="description" content="Allgemeine Geschäftsbedingungen der BIO HEAT Nord GmbH für Heizöl-Bestellungen und Lieferungen." />
+        <title>AGB | Allgemeine Geschäftsbedingungen - Valentin Heizöl</title>
+        <meta name="description" content="Allgemeine Geschäftsbedingungen der Valentin GmbH für Heizöl-Bestellungen und Lieferungen." />
       </Helmet>
       <Header />
 
@@ -18,7 +18,7 @@ const AGB = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Allgemeine Geschäftsbedingungen</h1>
             <p className="text-xl text-gray-600">
-              Gültig ab 01.01.2025 für BIO HEAT Nord GmbH
+              Gültig ab 01.01.2025 für Valentin GmbH
             </p>
           </div>
 
@@ -31,7 +31,7 @@ const AGB = () => {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Diese Allgemeinen Geschäftsbedingungen gelten für alle Lieferungen und Leistungen der BIO HEAT Nord GmbH, Lise-Meitner-Str. 22, 24941 Flensburg (nachfolgend "Verkäufer" genannt) an Verbraucher und Unternehmer (nachfolgend "Kunden" genannt). Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Verkäufer stimmt ihrer Geltung ausdrücklich schriftlich zu.
+                Diese Allgemeinen Geschäftsbedingungen gelten für alle Lieferungen und Leistungen der Valentin GmbH, Rheinallee 187, 55120 Mainz (nachfolgend "Verkäufer" genannt) an Verbraucher und Unternehmer (nachfolgend "Kunden" genannt). Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Verkäufer stimmt ihrer Geltung ausdrücklich schriftlich zu.
               </p>
             </CardContent>
           </Card>
@@ -145,7 +145,7 @@ const AGB = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-gray-700 text-sm leading-relaxed">
-                Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist Flensburg, sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
+                Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist Mainz, sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
               </p>
               <p className="text-gray-700 text-sm leading-relaxed">
                 Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt.
