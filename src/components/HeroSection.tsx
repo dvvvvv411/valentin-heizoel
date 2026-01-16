@@ -1,14 +1,37 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Truck, Clock, ShieldCheck, Users, Award, Headphones, Sparkles } from 'lucide-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
 import HorizontalPriceCalculator from './HorizontalPriceCalculator';
 import MobilePriceCalculator from './MobilePriceCalculator';
 
 const HeroSection = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
   const uspData = [
     { icon: Truck, text: 'Kostenlose Lieferung ab 1500 Liter', color: 'primary' },
     { icon: Clock, text: 'Lieferung in 4-7 Werktagen', color: 'orange' },
     { icon: ShieldCheck, text: 'Geprüfte Premium-Qualität', color: 'emerald' },
     { icon: Users, text: 'Über 100.000 zufriedene Kunden', color: 'primary' }
   ];
+
+  const onSelect = useCallback(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    onSelect();
+    api.on('select', onSelect);
+    api.on('reInit', onSelect);
+    return () => {
+      api.off('select', onSelect);
+      api.off('reInit', onSelect);
+    };
+  }, [api, onSelect]);
 
   const trustStats = [
     { icon: Users, value: '100.000+', label: 'Kunden', color: 'primary' },
@@ -59,60 +82,93 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Right Column: USP Grid + Trust Stats */}
+            {/* Right Column: USP Carousel + Trust Stats */}
             <div className="space-y-6">
-              {/* USP Grid 2x2 - Enhanced Design */}
-              <div className="grid grid-cols-2 gap-3">
-                {uspData.map((usp, index) => {
-                  const colorClasses = {
-                    primary: {
-                      gradient: 'from-primary-500 to-primary-600',
-                      bg: 'bg-primary-50',
-                      text: 'text-primary-600',
-                      border: 'border-primary-200/50',
-                      glow: 'group-hover:shadow-primary-200/50'
-                    },
-                    orange: {
-                      gradient: 'from-accent-orange-500 to-accent-orange-600',
-                      bg: 'bg-accent-orange-50',
-                      text: 'text-accent-orange-600',
-                      border: 'border-accent-orange-200/50',
-                      glow: 'group-hover:shadow-accent-orange-200/50'
-                    },
-                    emerald: {
-                      gradient: 'from-emerald-500 to-emerald-600',
-                      bg: 'bg-emerald-50',
-                      text: 'text-emerald-600',
-                      border: 'border-emerald-200/50',
-                      glow: 'group-hover:shadow-emerald-200/50'
-                    }
-                  };
-                  const colors = colorClasses[usp.color as keyof typeof colorClasses];
-                  
-                  return (
-                    <div 
-                      key={index}
-                      className="group relative animate-fade-in"
-                      style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-                    >
-                      {/* Gradient Border Effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`} />
+              {/* USP Carousel - Auto-Playing */}
+              <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <Carousel
+                  setApi={setApi}
+                  opts={{
+                    align: "center",
+                    loop: true,
+                  }}
+                  plugins={[
+                    Autoplay({
+                      delay: 3000,
+                      stopOnInteraction: false,
+                      stopOnMouseEnter: true,
+                    })
+                  ]}
+                  className="w-full"
+                >
+                  <CarouselContent className="-ml-0">
+                    {uspData.map((usp, index) => {
+                      const colorClasses = {
+                        primary: {
+                          gradient: 'from-primary-500 to-primary-600',
+                          bg: 'bg-primary-50',
+                          text: 'text-primary-600',
+                          border: 'border-primary-200/50',
+                          shadow: 'shadow-primary-200/50'
+                        },
+                        orange: {
+                          gradient: 'from-accent-orange-500 to-accent-orange-600',
+                          bg: 'bg-accent-orange-50',
+                          text: 'text-accent-orange-600',
+                          border: 'border-accent-orange-200/50',
+                          shadow: 'shadow-accent-orange-200/50'
+                        },
+                        emerald: {
+                          gradient: 'from-emerald-500 to-emerald-600',
+                          bg: 'bg-emerald-50',
+                          text: 'text-emerald-600',
+                          border: 'border-emerald-200/50',
+                          shadow: 'shadow-emerald-200/50'
+                        }
+                      };
+                      const colors = colorClasses[usp.color as keyof typeof colorClasses];
                       
-                      {/* Card Content */}
-                      <div className={`relative flex flex-col gap-3 p-4 rounded-2xl bg-white/90 backdrop-blur-md border ${colors.border} shadow-soft transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl ${colors.glow} h-full`}>
-                        {/* Icon with gradient background */}
-                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                          <usp.icon className="w-5 h-5 text-white" />
-                        </div>
-                        
-                        {/* Text */}
-                        <span className="text-gray-700 font-semibold text-sm leading-snug">
-                          {usp.text}
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
+                      return (
+                        <CarouselItem key={index} className="pl-0">
+                          <div className="group relative p-1">
+                            {/* Gradient Border Effect */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} rounded-2xl opacity-30 blur-sm transition-opacity duration-500`} />
+                            
+                            {/* Card Content - Larger single card */}
+                            <div className={`relative flex items-center gap-5 p-6 rounded-2xl bg-white/95 backdrop-blur-md border ${colors.border} shadow-xl ${colors.shadow} transition-all duration-500`}>
+                              {/* Icon with gradient background - Larger */}
+                              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg flex-shrink-0`}>
+                                <usp.icon className="w-8 h-8 text-white" />
+                              </div>
+                              
+                              {/* Text - Larger */}
+                              <span className="text-gray-800 font-bold text-lg leading-snug">
+                                {usp.text}
+                              </span>
+                            </div>
+                          </div>
+                        </CarouselItem>
+                      );
+                    })}
+                  </CarouselContent>
+                </Carousel>
+                
+                {/* Pagination Dots */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {uspData.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => api?.scrollTo(index)}
+                      className={cn(
+                        "h-2 rounded-full transition-all duration-300",
+                        current === index 
+                          ? "w-8 bg-gradient-to-r from-primary-500 to-primary-600" 
+                          : "w-2 bg-gray-300 hover:bg-gray-400"
+                      )}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Trust Statistics - Enhanced Design */}
