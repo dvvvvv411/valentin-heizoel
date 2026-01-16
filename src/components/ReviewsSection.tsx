@@ -1,6 +1,5 @@
 
-import { Star, Quote } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote, ArrowRight, Sparkles } from 'lucide-react';
 
 const ReviewsSection = () => {
   const reviews = [
@@ -8,7 +7,7 @@ const ReviewsSection = () => {
       name: 'Maria Huber',
       location: 'Berlin',
       rating: 5,
-      text: 'Bereits zum dritten Mal bestellt und immer top zufrieden! Pünktliche Lieferung, faire Preise und sehr freundlicher Service. Kann BIO HEAT Nord nur weiterempfehlen!',
+      text: 'Bereits zum dritten Mal bestellt und immer top zufrieden! Pünktliche Lieferung, faire Preise und sehr freundlicher Service. Kann Valentin Heizöl nur weiterempfehlen!',
       date: '2024-01-15'
     },
     {
@@ -43,7 +42,7 @@ const ReviewsSection = () => {
       name: 'Klaus Fischer',
       location: 'Leipzig',
       rating: 5,
-      text: 'Beste Heizölpreise in der Region! Habe verschiedene Anbieter verglichen und BIO HEAT Nord war nicht nur günstiger, sondern auch noch serviceorientierter.',
+      text: 'Beste Heizölpreise in der Region! Habe verschiedene Anbieter verglichen und Valentin Heizöl war nicht nur günstiger, sondern auch noch serviceorientierter.',
       date: '2023-12-28'
     }
   ];
@@ -52,78 +51,117 @@ const ReviewsSection = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        size={16}
-        className={index < rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}
+        size={18}
+        className={`${index < rating ? 'fill-amber-400 text-amber-400' : 'text-gray-200'} transition-all duration-300`}
       />
     ));
   };
 
+  const scrollToCalculator = () => {
+    const calculatorElement = document.getElementById('price-calculator');
+    calculatorElement?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Das sagen unsere Kunden
+    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary-100/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-accent-orange-100/20 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 rounded-full text-amber-700 text-sm font-semibold mb-6">
+            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+            Kundenstimmen
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Das sagen unsere <span className="gradient-text-premium">Kunden</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Über 10.000 zufriedene Kunden vertrauen auf unsere Qualität und unseren Service. 
-            Lesen Sie, was sie über uns sagen.
+          <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            Über 100.000 zufriedene Kunden vertrauen auf unsere Qualität und unseren Service.
           </p>
           
-          {/* Overall Rating */}
-          <div className="mt-8 inline-flex items-center space-x-2 bg-primary-50 px-6 py-3 rounded-full">
-            <div className="flex space-x-1">
+          {/* Overall Rating Badge */}
+          <div className="inline-flex items-center gap-4 px-6 py-4 bg-white rounded-2xl shadow-glass border border-white/50">
+            <div className="flex gap-1">
               {renderStars(5)}
             </div>
-            <span className="text-primary-600 font-bold text-lg">4.9/5</span>
-            <span className="text-gray-600">aus über 1.200 Bewertungen</span>
+            <div className="h-8 w-px bg-gray-200" />
+            <div>
+              <span className="text-2xl font-bold text-primary-600">4.9</span>
+              <span className="text-gray-500">/5</span>
+            </div>
+            <div className="h-8 w-px bg-gray-200" />
+            <span className="text-gray-600 font-medium">1.200+ Bewertungen</span>
           </div>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {reviews.map((review, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <Quote className="text-primary-600 opacity-50" size={24} />
-                  <div className="flex space-x-1">
-                    {renderStars(review.rating)}
-                  </div>
+            <div 
+              key={index} 
+              className="group premium-card rounded-2xl p-6 lg:p-8"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Header */}
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
+                  <Quote className="w-5 h-5 text-primary-600" />
                 </div>
-                
-                <p className="text-gray-700 mb-6 line-clamp-4 leading-relaxed">
-                  "{review.text}"
-                </p>
-                
-                <div className="border-t pt-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-semibold text-gray-900">{review.name}</div>
-                      <div className="text-sm text-gray-500">{review.location}</div>
-                    </div>
-                    <div className="text-xs text-gray-400">
-                      {new Date(review.date).toLocaleDateString('de-DE')}
-                    </div>
-                  </div>
+                <div className="flex gap-0.5">
+                  {renderStars(review.rating)}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              
+              {/* Review Text */}
+              <p className="text-gray-700 leading-relaxed mb-6 line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
+                "{review.text}"
+              </p>
+              
+              {/* Footer */}
+              <div className="flex items-center justify-between pt-5 border-t border-gray-100">
+                <div>
+                  <div className="font-semibold text-gray-900">{review.name}</div>
+                  <div className="text-sm text-gray-500">{review.location}</div>
+                </div>
+                <div className="text-xs text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full">
+                  {new Date(review.date).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' })}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">
-              Werden auch Sie Teil unserer zufriedenen Kunden!
-            </h3>
-            <p className="text-xl mb-8 text-primary-100">
-              Überzeugen Sie sich selbst von unserem erstklassigen Service und unseren fairen Preisen.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        <div className="relative">
+          <div className="absolute -inset-2 bg-gradient-to-r from-primary-500 to-accent-orange-500 rounded-3xl blur-xl opacity-20" />
+          
+          <div className="relative mesh-gradient rounded-2xl p-10 lg:p-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-orange-500/10 rounded-full blur-3xl" />
+            
+            <div className="relative text-center max-w-2xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm font-medium mb-6 backdrop-blur-sm">
+                <Sparkles className="w-4 h-4" />
+                Werden Sie Teil unserer Community
+              </div>
+              
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight">
+                Werden auch Sie Teil unserer zufriedenen Kunden!
+              </h3>
+              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+                Überzeugen Sie sich selbst von unserem erstklassigen Service und unseren fairen Preisen.
+              </p>
+              
+              <button 
+                onClick={scrollToCalculator}
+                className="group inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-premium"
+              >
                 Jetzt Preis berechnen
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
