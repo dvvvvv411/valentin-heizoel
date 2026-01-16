@@ -11,10 +11,34 @@ const HeroSection = () => {
   const [current, setCurrent] = useState(0);
 
   const uspData = [
-    { icon: Truck, text: 'Kostenlose Lieferung ab 1500 Liter', color: 'primary' },
-    { icon: Clock, text: 'Lieferung in 4-7 Werktagen', color: 'orange' },
-    { icon: ShieldCheck, text: 'Geprüfte Premium-Qualität', color: 'emerald' },
-    { icon: Users, text: 'Über 100.000 zufriedene Kunden', color: 'primary' }
+    { 
+      icon: Truck, 
+      title: 'Kostenlose Lieferung', 
+      subtitle: 'ab 1500 Liter',
+      description: 'Ab 1500 Liter Bestellmenge liefern wir deutschlandweit kostenlos zu Ihnen.',
+      color: 'primary' 
+    },
+    { 
+      icon: Clock, 
+      title: 'Schnelle Lieferung', 
+      subtitle: '4-7 Werktage',
+      description: 'Zuverlässige Lieferung innerhalb von 4-7 Werktagen nach Bestelleingang.',
+      color: 'orange' 
+    },
+    { 
+      icon: ShieldCheck, 
+      title: 'Premium-Qualität', 
+      subtitle: 'TÜV-geprüft',
+      description: 'Unser Heizöl entspricht höchsten Qualitätsstandards und ist TÜV-zertifiziert.',
+      color: 'emerald' 
+    },
+    { 
+      icon: Users, 
+      title: 'Zufriedene Kunden', 
+      subtitle: 'Über 100.000',
+      description: 'Mehr als 100.000 Kunden vertrauen uns seit über 20 Jahren.',
+      color: 'primary' 
+    }
   ];
 
   const onSelect = useCallback(() => {
@@ -94,7 +118,7 @@ const HeroSection = () => {
                   }}
                   plugins={[
                     Autoplay({
-                      delay: 3000,
+                      delay: 5000,
                       stopOnInteraction: false,
                       stopOnMouseEnter: true,
                     })
@@ -106,24 +130,27 @@ const HeroSection = () => {
                       const colorClasses = {
                         primary: {
                           gradient: 'from-primary-500 to-primary-600',
-                          bg: 'bg-primary-50',
-                          text: 'text-primary-600',
+                          glow: 'bg-primary-400',
+                          text: 'from-primary-600 to-primary-500',
                           border: 'border-primary-200/50',
-                          shadow: 'shadow-primary-200/50'
+                          shadow: 'shadow-primary-200/50',
+                          line: 'from-primary-400 to-accent-orange-400'
                         },
                         orange: {
                           gradient: 'from-accent-orange-500 to-accent-orange-600',
-                          bg: 'bg-accent-orange-50',
-                          text: 'text-accent-orange-600',
+                          glow: 'bg-accent-orange-400',
+                          text: 'from-accent-orange-600 to-accent-orange-500',
                           border: 'border-accent-orange-200/50',
-                          shadow: 'shadow-accent-orange-200/50'
+                          shadow: 'shadow-accent-orange-200/50',
+                          line: 'from-accent-orange-400 to-primary-400'
                         },
                         emerald: {
                           gradient: 'from-emerald-500 to-emerald-600',
-                          bg: 'bg-emerald-50',
-                          text: 'text-emerald-600',
+                          glow: 'bg-emerald-400',
+                          text: 'from-emerald-600 to-emerald-500',
                           border: 'border-emerald-200/50',
-                          shadow: 'shadow-emerald-200/50'
+                          shadow: 'shadow-emerald-200/50',
+                          line: 'from-emerald-400 to-primary-400'
                         }
                       };
                       const colors = colorClasses[usp.color as keyof typeof colorClasses];
@@ -132,19 +159,38 @@ const HeroSection = () => {
                         <CarouselItem key={index} className="pl-0">
                           <div className="group relative p-1">
                             {/* Gradient Border Effect */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} rounded-2xl opacity-30 blur-sm transition-opacity duration-500`} />
+                            <div className={`absolute inset-0 bg-gradient-to-r from-primary-400 via-accent-orange-400 to-primary-400 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 blur-sm`} />
                             
-                            {/* Card Content - Larger single card */}
-                            <div className={`relative flex items-center gap-5 p-6 rounded-2xl bg-white/95 backdrop-blur-md border ${colors.border} shadow-xl ${colors.shadow} transition-all duration-500`}>
-                              {/* Icon with gradient background - Larger */}
-                              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg flex-shrink-0`}>
-                                <usp.icon className="w-8 h-8 text-white" />
+                            {/* Card Content - Premium Design like Trust Card */}
+                            <div className={`relative p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-white/80 shadow-medium transition-all duration-700`}>
+                              {/* Decorative Header */}
+                              <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+                                <span className={`w-8 h-px bg-gradient-to-r ${colors.line}`} />
+                                Unser Versprechen
+                                <span className={`w-8 h-px bg-gradient-to-r ${colors.line}`} />
+                              </p>
+                              
+                              {/* Centered Icon with Glow + Pulse */}
+                              <div className="flex justify-center mb-4">
+                                <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg ${colors.shadow} transition-transform duration-500 group-hover:scale-110`}>
+                                  {/* Animated Pulse Ring */}
+                                  <div className={`absolute inset-0 rounded-2xl animate-pulse opacity-30 ${colors.glow}`} />
+                                  <usp.icon className="w-8 h-8 text-white relative z-10" />
+                                </div>
                               </div>
                               
-                              {/* Text - Larger */}
-                              <span className="text-gray-800 font-bold text-lg leading-snug">
-                                {usp.text}
-                              </span>
+                              {/* Title + Subtitle centered */}
+                              <div className="text-center mb-3">
+                                <div className="text-xl font-bold text-gray-800">{usp.title}</div>
+                                <div className={`text-lg font-semibold bg-gradient-to-r ${colors.text} bg-clip-text text-transparent`}>
+                                  {usp.subtitle}
+                                </div>
+                              </div>
+                              
+                              {/* Description */}
+                              <p className="text-sm text-gray-500 text-center leading-relaxed">
+                                {usp.description}
+                              </p>
                             </div>
                           </div>
                         </CarouselItem>
@@ -153,17 +199,17 @@ const HeroSection = () => {
                   </CarouselContent>
                 </Carousel>
                 
-                {/* Pagination Dots */}
-                <div className="flex justify-center gap-2 mt-4">
+                {/* Pagination Dots - Smaller and more subtle */}
+                <div className="flex justify-center gap-1.5 mt-4">
                   {uspData.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => api?.scrollTo(index)}
                       className={cn(
-                        "h-2 rounded-full transition-all duration-300",
+                        "rounded-full transition-all duration-500 ease-out",
                         current === index 
-                          ? "w-8 bg-gradient-to-r from-primary-500 to-primary-600" 
-                          : "w-2 bg-gray-300 hover:bg-gray-400"
+                          ? "h-1.5 w-4 bg-gradient-to-r from-primary-500 to-primary-600" 
+                          : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400"
                       )}
                       aria-label={`Go to slide ${index + 1}`}
                     />
