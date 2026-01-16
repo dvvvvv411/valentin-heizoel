@@ -33,8 +33,8 @@ const Header = () => {
       <header className={cn(
         "sticky top-0 z-50 hidden lg:block transition-all duration-500",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-xl shadow-glass border-b border-white/20" 
-          : "bg-white/60 backdrop-blur-md"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100" 
+          : "bg-transparent"
       )}>
         <div className="container mx-auto px-4">
           {/* Top Bar */}
@@ -113,8 +113,8 @@ const Header = () => {
       <header className={cn(
         "sticky top-0 z-50 lg:hidden transition-all duration-500",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-xl shadow-glass" 
-          : "bg-white/60 backdrop-blur-md"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg" 
+          : "bg-transparent"
       )}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
