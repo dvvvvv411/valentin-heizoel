@@ -1,8 +1,21 @@
-import { CheckCircle, Sparkles, Users, Award, Headphones } from 'lucide-react';
+import { Truck, Clock, ShieldCheck, Users, Award, Headphones, Sparkles } from 'lucide-react';
 import HorizontalPriceCalculator from './HorizontalPriceCalculator';
 import MobilePriceCalculator from './MobilePriceCalculator';
 
 const HeroSection = () => {
+  const uspData = [
+    { icon: Truck, text: 'Kostenlose Lieferung ab 1500 Liter', color: 'primary' },
+    { icon: Clock, text: 'Lieferung in 4-7 Werktagen', color: 'orange' },
+    { icon: ShieldCheck, text: 'Geprüfte Premium-Qualität', color: 'emerald' },
+    { icon: Users, text: 'Über 100.000 zufriedene Kunden', color: 'primary' }
+  ];
+
+  const trustStats = [
+    { icon: Users, value: '100.000+', label: 'Kunden', color: 'primary' },
+    { icon: Award, value: '20+', label: 'Jahre', color: 'orange' },
+    { icon: Headphones, value: '24h', label: 'Service', color: 'primary' }
+  ];
+
   return (
     <section id="home" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50">
       {/* Animated Gradient Orbs */}
@@ -47,46 +60,115 @@ const HeroSection = () => {
             </div>
 
             {/* Right Column: USP Grid + Trust Stats */}
-            <div className="space-y-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-              {/* USP Grid 2x2 */}
+            <div className="space-y-6">
+              {/* USP Grid 2x2 - Enhanced Design */}
               <div className="grid grid-cols-2 gap-3">
-                {[
-                  { text: 'Kostenlose Lieferung ab 1500 Liter', highlight: true },
-                  { text: 'Lieferung in 4-7 Werktagen', highlight: false },
-                  { text: 'Geprüfte Premium-Qualität', highlight: false },
-                  { text: 'Über 100.000 zufriedene Kunden', highlight: true }
-                ].map((usp, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-white/70 backdrop-blur-sm border border-white/80 shadow-soft transition-all duration-300 hover:shadow-medium hover:border-primary-200/50"
-                  >
-                    <div className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${usp.highlight ? 'bg-primary-100' : 'bg-accent-orange-100'}`}>
-                      <CheckCircle className={`w-4 h-4 ${usp.highlight ? 'text-primary-600' : 'text-accent-orange-600'}`} />
+                {uspData.map((usp, index) => {
+                  const colorClasses = {
+                    primary: {
+                      gradient: 'from-primary-500 to-primary-600',
+                      bg: 'bg-primary-50',
+                      text: 'text-primary-600',
+                      border: 'border-primary-200/50',
+                      glow: 'group-hover:shadow-primary-200/50'
+                    },
+                    orange: {
+                      gradient: 'from-accent-orange-500 to-accent-orange-600',
+                      bg: 'bg-accent-orange-50',
+                      text: 'text-accent-orange-600',
+                      border: 'border-accent-orange-200/50',
+                      glow: 'group-hover:shadow-accent-orange-200/50'
+                    },
+                    emerald: {
+                      gradient: 'from-emerald-500 to-emerald-600',
+                      bg: 'bg-emerald-50',
+                      text: 'text-emerald-600',
+                      border: 'border-emerald-200/50',
+                      glow: 'group-hover:shadow-emerald-200/50'
+                    }
+                  };
+                  const colors = colorClasses[usp.color as keyof typeof colorClasses];
+                  
+                  return (
+                    <div 
+                      key={index}
+                      className="group relative animate-fade-in"
+                      style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+                    >
+                      {/* Gradient Border Effect */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm`} />
+                      
+                      {/* Card Content */}
+                      <div className={`relative flex flex-col gap-3 p-4 rounded-2xl bg-white/90 backdrop-blur-md border ${colors.border} shadow-soft transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl ${colors.glow} h-full`}>
+                        {/* Icon with gradient background */}
+                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                          <usp.icon className="w-5 h-5 text-white" />
+                        </div>
+                        
+                        {/* Text */}
+                        <span className="text-gray-700 font-semibold text-sm leading-snug">
+                          {usp.text}
+                        </span>
+                      </div>
                     </div>
-                    <span className="text-gray-700 font-medium text-sm">{usp.text}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
-              {/* Trust Statistics */}
-              <div className="p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/80 shadow-soft">
-                <p className="text-xs text-gray-500 mb-4 font-medium uppercase tracking-wider">Vertrauen Sie auf Erfahrung</p>
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { icon: Users, value: '100.000+', label: 'Kunden', color: 'text-primary-600', bg: 'bg-primary-50' },
-                    { icon: Award, value: '20+', label: 'Jahre', color: 'text-accent-orange-600', bg: 'bg-accent-orange-50' },
-                    { icon: Headphones, value: '24h', label: 'Service', color: 'text-primary-600', bg: 'bg-primary-50' }
-                  ].map((stat, index) => (
-                    <div key={index} className="text-center group">
-                      <div className={`w-10 h-10 rounded-xl ${stat.bg} flex items-center justify-center mx-auto mb-2 transition-transform duration-300 group-hover:scale-110`}>
-                        <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                      </div>
-                      <div className={`text-xl lg:text-2xl font-bold ${stat.color}`}>
-                        {stat.value}
-                      </div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
-                    </div>
-                  ))}
+              {/* Trust Statistics - Enhanced Design */}
+              <div 
+                className="relative animate-fade-in group"
+                style={{ animationDelay: '0.5s' }}
+              >
+                {/* Gradient Border Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 via-accent-orange-400 to-primary-400 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-sm" />
+                
+                <div className="relative p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-white/80 shadow-medium">
+                  <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
+                    Vertrauen Sie auf Erfahrung
+                    <span className="w-8 h-px bg-gradient-to-r from-accent-orange-400 to-primary-400" />
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-4">
+                    {trustStats.map((stat, index) => {
+                      const isOrange = stat.color === 'orange';
+                      
+                      return (
+                        <div 
+                          key={index} 
+                          className="group/stat text-center"
+                        >
+                          {/* Icon with Glow */}
+                          <div className={`relative w-14 h-14 rounded-2xl mx-auto mb-3 flex items-center justify-center transition-all duration-300 group-hover/stat:scale-110 ${
+                            isOrange 
+                              ? 'bg-gradient-to-br from-accent-orange-500 to-accent-orange-600 shadow-lg shadow-accent-orange-200/50' 
+                              : 'bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg shadow-primary-200/50'
+                          }`}>
+                            {/* Animated Ring */}
+                            <div className={`absolute inset-0 rounded-2xl animate-pulse opacity-30 ${
+                              isOrange ? 'bg-accent-orange-400' : 'bg-primary-400'
+                            }`} />
+                            <stat.icon className="w-6 h-6 text-white relative z-10" />
+                          </div>
+                          
+                          {/* Value with Gradient */}
+                          <div className={`text-2xl lg:text-3xl font-bold bg-gradient-to-r ${
+                            isOrange 
+                              ? 'from-accent-orange-600 to-accent-orange-500' 
+                              : 'from-primary-600 to-primary-500'
+                          } bg-clip-text text-transparent`}>
+                            {stat.value}
+                          </div>
+                          
+                          {/* Label */}
+                          <div className="text-sm text-gray-500 font-medium mt-1">
+                            {stat.label}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
