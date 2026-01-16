@@ -35,7 +35,7 @@ const CompanySection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Über BIO HEAT Nord
+            Über Valentin Heizöl
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ihr zuverlässiger Partner für Heizöl in Deutschland mit über 20 Jahren Erfahrung. 
@@ -53,7 +53,7 @@ const CompanySection = () => {
               <p>
                 Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden 
                 Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen 
-                in Flensburg begann, ist heute ein zuverlässiger Partner für über 100.000 
+                in Mainz begann, ist heute ein zuverlässiger Partner für über 100.000 
                 Kunden in ganz Deutschland.
               </p>
               <p>
@@ -77,7 +77,7 @@ const CompanySection = () => {
                 <div className="h-96 w-full">
                   <img 
                     src="https://i.imgur.com/xPI8LoI.jpeg" 
-                    alt="BIO HEAT Nord Unternehmen"
+                    alt="Valentin Heizöl Unternehmen"
                     className="w-full h-full object-cover"
                   />
                 </div>

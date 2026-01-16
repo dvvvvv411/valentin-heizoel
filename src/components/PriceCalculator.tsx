@@ -15,8 +15,8 @@ const PriceCalculator = () => {
   const { toast } = useToast();
 
   const prices = {
-    standard_heizoel: 0.70,
-    premium_heizoel: 0.73
+    standard_heizoel: 0.60,
+    premium_heizoel: 0.63
   };
 
   const shopId = "93d86228-d5ca-4288-9279-83d91efa1e35";
@@ -74,7 +74,7 @@ const PriceCalculator = () => {
         
         if (data.token) {
           // Redirect to checkout with token
-          const checkoutUrl = `https://checkout.bioheatnord.de/checkout?token=${data.token}`;
+          const checkoutUrl = `https://checkout.valentin-heizoel.de/checkout?token=${data.token}`;
           console.log('Redirecting to:', checkoutUrl);
           window.location.assign(checkoutUrl);
           
@@ -94,7 +94,7 @@ const PriceCalculator = () => {
       console.error('Order error:', error);
       toast({
         title: "Fehler bei der Bestellung",
-        description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per E-Mail an info@bioheatnord.de.",
+        description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per E-Mail an info@valentin-heizoel.de.",
         variant: "destructive"
       });
     } finally {

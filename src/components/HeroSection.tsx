@@ -37,7 +37,7 @@ const HeroSection = () => {
               </h1>
               
               <p className="text-lg lg:text-xl text-gray-600 max-w-lg">
-                Kostenlose Lieferung in Deutschland • <span className="text-accent-orange-600 font-semibold">Ab 70 Cent pro Liter</span> • Schnell & zuverlässig
+                Kostenlose Lieferung in Deutschland • <span className="text-accent-orange-600 font-semibold">Ab 60 Cent pro Liter</span> • Schnell & zuverlässig
               </p>
             </div>
 

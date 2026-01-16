@@ -8,8 +8,8 @@ const Widerrufsrecht = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Widerrufsrecht | BIO HEAT Nord Heizöl</title>
-        <meta name="description" content="Informationen zum Widerrufsrecht bei Heizöl-Bestellungen. Ihre Rechte als Verbraucher bei BIO HEAT Nord." />
+        <title>Widerrufsrecht | Valentin Heizöl</title>
+        <meta name="description" content="Informationen zum Widerrufsrecht bei Heizöl-Bestellungen. Ihre Rechte als Verbraucher bei Valentin Heizöl." />
       </Helmet>
       <Header />
 
@@ -48,14 +48,14 @@ const Widerrufsrecht = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-700 text-sm leading-relaxed">
-                Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (BIO HEAT Nord GmbH, Lise-Meitner-Str. 22, 24941 Flensburg, E-Mail: info@bioheatnord.de) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.
+                Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Valentin GmbH, Rheinallee 187, 55120 Mainz, E-Mail: info@valentin-heizoel.de) mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren.
               </p>
               
               <div className="bg-primary-50 p-4 rounded-lg">
                 <h3 className="font-semibold text-gray-900 mb-2">Kontakt für Widerruf:</h3>
                 <div className="space-y-1 text-gray-700 text-sm">
-                  <p><span className="font-semibold">Adresse:</span> BIO HEAT Nord GmbH, Lise-Meitner-Str. 22, 24941 Flensburg</p>
-                  <p><span className="font-semibold">E-Mail:</span> info@bioheatnord.de</p>
+                  <p><span className="font-semibold">Adresse:</span> Valentin GmbH, Rheinallee 187, 55120 Mainz</p>
+                  <p><span className="font-semibold">E-Mail:</span> info@valentin-heizoel.de</p>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ const Widerrufsrecht = () => {
                 </p>
                 
                 <div className="space-y-4 text-gray-700 text-sm">
-                  <p>An: BIO HEAT Nord GmbH, Lise-Meitner-Str. 22, 24941 Flensburg, E-Mail: info@bioheatnord.de</p>
+                  <p>An: Valentin GmbH, Rheinallee 187, 55120 Mainz, E-Mail: info@valentin-heizoel.de</p>
                   
                   <p>Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*):</p>
                   

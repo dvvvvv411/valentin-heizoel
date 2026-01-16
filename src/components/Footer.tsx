@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <img 
               src="/lovable-uploads/bioheat-logo.png" 
-              alt="BIO HEAT Nord" 
+              alt="Valentin Heizöl" 
               className="h-20"
             />
             <p className="text-gray-300 leading-relaxed">
@@ -19,7 +19,7 @@ const Footer = () => {
               Qualität, Service und faire Preise.
             </p>
             <div>
-              <div className="font-semibold">BIO HEAT Nord GmbH</div>
+              <div className="font-semibold">Valentin GmbH</div>
               <div className="text-sm text-gray-400">Deutschlands Heizöl-Experte</div>
             </div>
           </div>
@@ -43,13 +43,13 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-primary-400" />
-                <span>info@bioheatnord.de</span>
+                <span>info@valentin-heizoel.de</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-accent-orange-400 mt-1" />
                 <div>
-                  <div>Lise-Meitner-Str. 22</div>
-                  <div>24941 Flensburg</div>
+                  <div>Rheinallee 187</div>
+                  <div>55120 Mainz</div>
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm">
-              © 2025 BIO HEAT Nord GmbH. Alle Rechte vorbehalten.
+              © 2025 Valentin GmbH. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
               <Link to="/impressum" className="hover:text-accent-orange-400 transition-colors">Impressum</Link>
