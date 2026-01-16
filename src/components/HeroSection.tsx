@@ -115,6 +115,7 @@ const HeroSection = () => {
                   opts={{
                     align: "center",
                     loop: true,
+                    duration: 35,
                   }}
                   plugins={[
                     Autoplay({
@@ -130,68 +131,52 @@ const HeroSection = () => {
                       const colorClasses = {
                         primary: {
                           gradient: 'from-primary-500 to-primary-600',
-                          glow: 'bg-primary-400',
                           text: 'from-primary-600 to-primary-500',
-                          border: 'border-primary-200/50',
-                          shadow: 'shadow-primary-200/50',
-                          line: 'from-primary-400 to-accent-orange-400'
+                          iconShadow: 'shadow-primary-100/60'
                         },
                         orange: {
                           gradient: 'from-accent-orange-500 to-accent-orange-600',
-                          glow: 'bg-accent-orange-400',
                           text: 'from-accent-orange-600 to-accent-orange-500',
-                          border: 'border-accent-orange-200/50',
-                          shadow: 'shadow-accent-orange-200/50',
-                          line: 'from-accent-orange-400 to-primary-400'
+                          iconShadow: 'shadow-accent-orange-100/60'
                         },
                         emerald: {
                           gradient: 'from-emerald-500 to-emerald-600',
-                          glow: 'bg-emerald-400',
                           text: 'from-emerald-600 to-emerald-500',
-                          border: 'border-emerald-200/50',
-                          shadow: 'shadow-emerald-200/50',
-                          line: 'from-emerald-400 to-primary-400'
+                          iconShadow: 'shadow-emerald-100/60'
                         }
                       };
                       const colors = colorClasses[usp.color as keyof typeof colorClasses];
                       
                       return (
                         <CarouselItem key={index} className="pl-0">
-                          <div className="group relative p-1">
-                            {/* Gradient Border Effect */}
-                            <div className={`absolute inset-0 bg-gradient-to-r from-primary-400 via-accent-orange-400 to-primary-400 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 blur-sm`} />
+                          {/* Clean Card without buggy glow effect */}
+                          <div className="p-6 rounded-2xl bg-white border border-gray-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-shadow duration-500">
+                            {/* Decorative Header */}
+                            <p className="text-xs text-gray-400 mb-5 font-medium uppercase tracking-widest flex items-center justify-center gap-2">
+                              <span className="w-6 h-px bg-gray-200" />
+                              Unser Versprechen
+                              <span className="w-6 h-px bg-gray-200" />
+                            </p>
                             
-                            {/* Card Content - Premium Design like Trust Card */}
-                            <div className={`relative p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-white/80 shadow-medium transition-all duration-700`}>
-                              {/* Decorative Header */}
-                              <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
-                                <span className={`w-8 h-px bg-gradient-to-r ${colors.line}`} />
-                                Unser Versprechen
-                                <span className={`w-8 h-px bg-gradient-to-r ${colors.line}`} />
-                              </p>
-                              
-                              {/* Centered Icon with Glow + Pulse */}
-                              <div className="flex justify-center mb-4">
-                                <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-lg ${colors.shadow} transition-transform duration-500 group-hover:scale-110`}>
-                                  {/* Animated Pulse Ring */}
-                                  <div className={`absolute inset-0 rounded-2xl animate-pulse opacity-30 ${colors.glow}`} />
-                                  <usp.icon className="w-8 h-8 text-white relative z-10" />
-                                </div>
+                            {/* Centered Icon - clean without pulse */}
+                            <div className="flex justify-center mb-4">
+                              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-md ${colors.iconShadow}`}>
+                                <usp.icon className="w-7 h-7 text-white" />
                               </div>
-                              
-                              {/* Title + Subtitle centered */}
-                              <div className="text-center mb-3">
-                                <div className="text-xl font-bold text-gray-800">{usp.title}</div>
-                                <div className={`text-lg font-semibold bg-gradient-to-r ${colors.text} bg-clip-text text-transparent`}>
-                                  {usp.subtitle}
-                                </div>
-                              </div>
-                              
-                              {/* Description */}
-                              <p className="text-sm text-gray-500 text-center leading-relaxed">
-                                {usp.description}
-                              </p>
                             </div>
+                            
+                            {/* Title + Subtitle centered */}
+                            <div className="text-center mb-2">
+                              <div className="text-lg font-bold text-gray-800">{usp.title}</div>
+                              <div className={`text-base font-semibold bg-gradient-to-r ${colors.text} bg-clip-text text-transparent`}>
+                                {usp.subtitle}
+                              </div>
+                            </div>
+                            
+                            {/* Description */}
+                            <p className="text-sm text-gray-500 text-center leading-relaxed">
+                              {usp.description}
+                            </p>
                           </div>
                         </CarouselItem>
                       );
@@ -199,17 +184,17 @@ const HeroSection = () => {
                   </CarouselContent>
                 </Carousel>
                 
-                {/* Pagination Dots - Smaller and more subtle */}
-                <div className="flex justify-center gap-1.5 mt-4">
+                {/* Pagination Dots - Tiny and subtle */}
+                <div className="flex justify-center gap-1 mt-3">
                   {uspData.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => api?.scrollTo(index)}
                       className={cn(
-                        "rounded-full transition-all duration-500 ease-out",
+                        "rounded-full transition-all duration-300",
                         current === index 
-                          ? "h-1.5 w-4 bg-gradient-to-r from-primary-500 to-primary-600" 
-                          : "w-1.5 h-1.5 bg-gray-300 hover:bg-gray-400"
+                          ? "h-1 w-2.5 bg-primary-500" 
+                          : "w-1 h-1 bg-gray-300/60 hover:bg-gray-400/80"
                       )}
                       aria-label={`Go to slide ${index + 1}`}
                     />
