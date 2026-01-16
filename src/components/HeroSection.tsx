@@ -18,9 +18,9 @@ const HeroSection = () => {
         backgroundSize: '60px 60px'
       }} />
 
-      {/* ============ UPPER SECTION (50vh) ============ */}
-      <div className="relative z-10 min-h-[50vh] flex items-center">
-        <div className="container mx-auto px-4 py-12 lg:py-8">
+      {/* ============ UPPER SECTION ============ */}
+      <div className="relative z-10 flex items-center pt-12 lg:pt-8 pb-4 lg:pb-2">
+        <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
             {/* Left Column: Badge, Headline, Subheadline */}
@@ -92,24 +92,11 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* ============ LOWER SECTION (50vh) - Price Calculator ============ */}
-      <div id="price-calculator" className="relative z-10 min-h-[50vh] flex items-center bg-gradient-to-b from-transparent via-primary-50/30 to-primary-100/40">
-        {/* Decorative top border */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300/30 to-transparent" />
-        
-        <div className="container mx-auto px-4 py-12 lg:py-8">
-          {/* Section Header */}
-          <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">
-              Heizöl <span className="gradient-text-premium">Preisrechner</span>
-            </h2>
-            <p className="text-gray-600">Berechnen Sie Ihren individuellen Preis in Sekunden</p>
-          </div>
-
+      {/* ============ LOWER SECTION - Price Calculator ============ */}
+      <div id="price-calculator" className="relative z-10 flex items-center pt-4 lg:pt-2 pb-12 lg:pb-8">
+        <div className="container mx-auto px-4">
           {/* Desktop: Horizontal Calculator */}
           <div className="hidden lg:block animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {/* Glow effect behind calculator */}
-            <div className="absolute inset-x-4 -inset-y-4 bg-gradient-to-r from-primary-200/20 via-accent-orange-200/20 to-primary-200/20 rounded-3xl blur-2xl opacity-60 -z-10" />
             <HorizontalPriceCalculator />
           </div>
 
@@ -117,14 +104,6 @@ const HeroSection = () => {
           <div className="lg:hidden">
             <MobilePriceCalculator />
           </div>
-        </div>
-      </div>
-
-      {/* Premium Scroll Indicator - Hidden on Mobile */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 z-20">
-        <span className="text-xs text-gray-400 font-medium tracking-wider uppercase">Mehr entdecken</span>
-        <div className="w-6 h-10 border-2 border-primary-300/50 rounded-full flex justify-center p-1 backdrop-blur-sm bg-white/30">
-          <div className="w-1.5 h-3 bg-gradient-to-b from-primary-500 to-primary-600 rounded-full animate-bounce" />
         </div>
       </div>
     </section>
