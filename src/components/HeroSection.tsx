@@ -149,13 +149,13 @@ const HeroSection = () => {
                       
                       return (
                         <CarouselItem key={index} className="pl-0">
-                          {/* Clean Card without buggy glow effect */}
-                          <div className="p-6 rounded-2xl bg-white border border-gray-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-shadow duration-500">
+                          {/* Clean Card - matching Trust Statistics styling */}
+                          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
                             {/* Decorative Header */}
-                            <p className="text-xs text-gray-400 mb-5 font-medium uppercase tracking-widest flex items-center justify-center gap-2">
-                              <span className="w-6 h-px bg-gray-200" />
+                            <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+                              <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
                               Unser Versprechen
-                              <span className="w-6 h-px bg-gray-200" />
+                              <span className="w-8 h-px bg-gradient-to-r from-accent-orange-400 to-primary-400" />
                             </p>
                             
                             {/* Centered Icon - clean without pulse */}
