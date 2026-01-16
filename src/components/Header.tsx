@@ -31,7 +31,7 @@ const Header = () => {
     <>
       {/* Desktop Header */}
       <header className={cn(
-        "sticky top-0 z-50 hidden lg:block transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 hidden lg:block transition-all duration-500",
         isScrolled 
           ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100" 
           : "bg-transparent"
@@ -111,7 +111,7 @@ const Header = () => {
 
       {/* Mobile Header */}
       <header className={cn(
-        "sticky top-0 z-50 lg:hidden transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-500",
         isScrolled 
           ? "bg-white/95 backdrop-blur-xl shadow-lg" 
           : "bg-transparent"
