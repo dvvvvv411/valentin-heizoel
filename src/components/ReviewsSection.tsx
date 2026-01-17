@@ -1,49 +1,49 @@
 
-import { Star, Quote, ArrowRight, Sparkles } from 'lucide-react';
+import { Star, Quote, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const ReviewsSection = () => {
   const reviews = [
     {
-      name: 'Maria Huber',
+      name: 'Maria H.',
       location: 'Berlin',
       rating: 5,
       text: 'Bereits zum dritten Mal bestellt und immer top zufrieden! Pünktliche Lieferung, faire Preise und sehr freundlicher Service. Kann Valentin Heizöl nur weiterempfehlen!',
-      date: '2024-01-15'
+      date: '2026-01-15'
     },
     {
-      name: 'Thomas Wagner',
+      name: 'Thomas W.',
       location: 'Hamburg',
       rating: 5,
       text: 'Schnelle und unkomplizierte Bestellung. Der Fahrer war sehr höflich und die Qualität des Heizöls ist ausgezeichnet. Heize seit Jahren günstiger als mit Gas!',
-      date: '2024-01-10'
+      date: '2026-01-10'
     },
     {
-      name: 'Familie Schneider',
+      name: 'Familie S.',
       location: 'Köln',
       rating: 5,
       text: 'Hervorragender Kundenservice! Hatten eine Frage zur Lieferung und wurden sofort freundlich beraten. Die Lieferung kam pünktlich und alles lief perfekt.',
-      date: '2024-01-08'
+      date: '2026-01-08'
     },
     {
-      name: 'Johann Müller',
+      name: 'Johann M.',
       location: 'Frankfurt am Main',
       rating: 5,
       text: 'Seit 5 Jahren treuer Kunde. Zuverlässig, günstig und immer gute Qualität. Besonders schätze ich die kostenlose Lieferung und die schnelle Abwicklung.',
-      date: '2024-01-05'
+      date: '2025-12-20'
     },
     {
-      name: 'Sarah Becker',
+      name: 'Sarah B.',
       location: 'Stuttgart',
       rating: 5,
       text: 'Online-Bestellung war super einfach, der Preisrechner sehr hilfreich. Lieferung kam wie versprochen und das Personal war sehr professionell.',
-      date: '2024-01-03'
+      date: '2025-12-15'
     },
     {
-      name: 'Klaus Fischer',
+      name: 'Klaus F.',
       location: 'Leipzig',
       rating: 5,
       text: 'Beste Heizölpreise in der Region! Habe verschiedene Anbieter verglichen und Valentin Heizöl war nicht nur günstiger, sondern auch noch serviceorientierter.',
-      date: '2023-12-28'
+      date: '2025-12-05'
     }
   ];
 
@@ -60,6 +60,10 @@ const ReviewsSection = () => {
   const scrollToCalculator = () => {
     const calculatorElement = document.getElementById('price-calculator');
     calculatorElement?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const getInitials = (name: string) => {
+    return name.charAt(0).toUpperCase();
   };
 
   return (
@@ -102,13 +106,16 @@ const ReviewsSection = () => {
           {reviews.map((review, index) => (
             <div 
               key={index} 
-              className="group premium-card rounded-2xl p-6 lg:p-8"
+              className="group relative premium-card rounded-2xl p-6 lg:p-8 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
+              {/* Accent stripe */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-400 rounded-t-2xl" />
+              
               {/* Header */}
               <div className="flex items-start justify-between mb-5">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
-                  <Quote className="w-5 h-5 text-primary-600" />
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-lg">{getInitials(review.name)}</span>
                 </div>
                 <div className="flex gap-0.5">
                   {renderStars(review.rating)}
@@ -116,9 +123,12 @@ const ReviewsSection = () => {
               </div>
               
               {/* Review Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
-                "{review.text}"
-              </p>
+              <div className="relative mb-6">
+                <Quote className="absolute -top-2 -left-1 w-8 h-8 text-primary-200 group-hover:text-primary-300 transition-colors duration-300" />
+                <p className="text-gray-700 leading-relaxed pl-6 line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
+                  "{review.text}"
+                </p>
+              </div>
               
               {/* Footer */}
               <div className="flex items-center justify-between pt-5 border-t border-gray-100">
@@ -126,8 +136,14 @@ const ReviewsSection = () => {
                   <div className="font-semibold text-gray-900">{review.name}</div>
                   <div className="text-sm text-gray-500">{review.location}</div>
                 </div>
-                <div className="text-xs text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full">
-                  {new Date(review.date).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' })}
+                <div className="flex flex-col items-end gap-1">
+                  <div className="flex items-center gap-1 text-xs text-emerald-600 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>Verifiziert</span>
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    {new Date(review.date).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' })}
+                  </div>
                 </div>
               </div>
             </div>
