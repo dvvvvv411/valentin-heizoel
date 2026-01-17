@@ -167,22 +167,22 @@ const HeroSection = () => {
                   </div>
                 </div>
                 
-                {/* Pagination Dots */}
-                <div className="flex justify-center gap-1.5 mt-4">
-                  {uspData.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrent(index)}
-                      className={cn(
-                        "rounded-full transition-all duration-300",
-                        current === index 
-                          ? "h-1.5 w-4 bg-primary-500" 
-                          : "w-1.5 h-1.5 bg-gray-300/60 hover:bg-gray-400/80"
-                      )}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
+          {/* Pagination Dots - Modern & Subtle */}
+          <div className="flex justify-center gap-1 mt-3">
+            {uspData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrent(index)}
+                className={cn(
+                  "rounded-full transition-all duration-300",
+                  current === index 
+                    ? "w-3 h-1 bg-primary-500/80" 
+                    : "w-1 h-1 bg-gray-300/50 hover:bg-gray-400/60"
+                )}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
               </div>
 
               {/* Trust Statistics - Clean Design */}
