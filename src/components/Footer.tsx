@@ -32,7 +32,7 @@ const Footer = () => {
             <img 
               src={valentinLogo} 
               alt="Valentin Heizöl" 
-              className="h-16"
+              className="h-12 lg:h-[51.2px]"
             />
             <p className="text-gray-400 leading-relaxed">
               Ihr zuverlässiger Partner für Heizöl in Deutschland mit über 20 Jahren Erfahrung. 

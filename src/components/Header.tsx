@@ -64,7 +64,7 @@ const Header = () => {
                 <img 
                   src={valentinLogo} 
                   alt="Valentin Heizöl" 
-                  className="h-14 transition-transform duration-300 group-hover:scale-105"
+                  className="h-11 transition-transform duration-300 group-hover:scale-105"
                 />
               </Link>
             </div>
