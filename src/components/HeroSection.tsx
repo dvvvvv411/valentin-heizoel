@@ -126,7 +126,7 @@ const HeroSection = () => {
                   ]}
                   className="w-full overflow-visible"
                 >
-                  <CarouselContent className="-ml-0 py-4 -my-4">
+                  <CarouselContent className="-ml-0">
                     {uspData.map((usp, index) => {
                       const colorClasses = {
                         primary: {
