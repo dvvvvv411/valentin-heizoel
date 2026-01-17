@@ -1,5 +1,5 @@
-
 import { Building, Users, Award, Clock, ArrowUpRight } from 'lucide-react';
+import shopHeaderImage from '@/assets/shop-header.jpg';
 
 const CompanySection = () => {
   const stats = [
@@ -103,26 +103,12 @@ const CompanySection = () => {
 
           {/* Company Image */}
           <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary-200/30 via-accent-orange-200/30 to-primary-200/30 rounded-3xl blur-2xl" />
-            
-            <div className="relative premium-card rounded-2xl overflow-hidden">
-              <div className="aspect-[4/3] w-full">
-                <img 
-                  src="https://i.imgur.com/xPI8LoI.jpeg" 
-                  alt="Valentin Heizöl Unternehmen"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 lg:-right-8">
-              <div className="glass-card rounded-2xl p-5 shadow-premium">
-                <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text-premium">20+</div>
-                  <div className="text-sm text-gray-600 font-medium">Jahre</div>
-                </div>
-              </div>
+            <div className="aspect-[4/3] w-full overflow-hidden">
+              <img 
+                src={shopHeaderImage} 
+                alt="Valentin Heizöl Unternehmen"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
           </div>
         </div>
