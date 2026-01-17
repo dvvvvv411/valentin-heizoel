@@ -110,10 +110,7 @@ const ReviewsSection = () => {
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-400 rounded-t-2xl" />
               
               {/* Header */}
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <Quote className="w-6 h-6 text-primary-600" />
-                </div>
+              <div className="flex items-start justify-end mb-5">
                 <div className="flex gap-0.5">
                   {renderStars(review.rating)}
                 </div>
