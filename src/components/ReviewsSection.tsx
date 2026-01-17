@@ -110,7 +110,8 @@ const ReviewsSection = () => {
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-400 rounded-t-2xl" />
               
               {/* Header */}
-              <div className="flex items-start justify-end mb-5">
+              <div className="flex items-center justify-between mb-5">
+                <Quote className="w-8 h-8 text-primary-200 group-hover:text-primary-300 transition-colors duration-300" />
                 <div className="flex gap-0.5">
                   {renderStars(review.rating)}
                 </div>
@@ -118,8 +119,7 @@ const ReviewsSection = () => {
               
               {/* Review Text */}
               <div className="relative mb-6">
-                <Quote className="absolute -top-2 -left-1 w-8 h-8 text-primary-200 group-hover:text-primary-300 transition-colors duration-300" />
-                <p className="text-gray-700 leading-relaxed pl-6 line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
+                <p className="text-gray-700 leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-500">
                   "{review.text}"
                 </p>
               </div>
