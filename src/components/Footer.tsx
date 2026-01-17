@@ -9,9 +9,7 @@ const Footer = () => {
     { to: '/', label: 'Home' },
     { to: '/produkte', label: 'Produkte' },
     { to: '/services', label: 'Services' },
-    { to: '/ueber-uns', label: 'Über uns' },
-    { to: '/agb', label: 'AGB' },
-    { to: '/datenschutz', label: 'Datenschutz' }
+    { to: '/ueber-uns', label: 'Über uns' }
   ];
 
   const legalLinks = [
@@ -34,7 +32,7 @@ const Footer = () => {
             <img 
               src={valentinLogo} 
               alt="Valentin Heizöl" 
-              className="h-16 brightness-0 invert opacity-90"
+              className="h-16"
             />
             <p className="text-gray-400 leading-relaxed">
               Ihr zuverlässiger Partner für Heizöl in Deutschland mit über 20 Jahren Erfahrung. 
@@ -47,9 +45,9 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {quickLinks.map((link) => (
                 <li key={link.to}>
                   <Link 
