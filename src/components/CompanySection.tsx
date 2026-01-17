@@ -81,7 +81,7 @@ const CompanySection = () => {
             </h3>
             
             <p className="text-gray-600 text-lg leading-relaxed">
-              Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen in Mainz begann, ist heute ein zuverlässiger Partner für über 100.000 Kunden deutschlandweit. Unser Erfolgsrezept: Erstklassige Qualität zu fairen Preisen, persönlicher Service und ein erfahrenes Team mit über 20 Jahren Erfahrung. Als bundesweit agierendes Unternehmen kennen wir die Bedürfnisse unserer Kunden genau und leisten einen wichtigen Beitrag zur Energieversorgung in ganz Deutschland.
+              Seit der Gründung im Jahr <span className="font-semibold text-primary-600">2007</span> haben wir uns zu einem der führenden Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen in Mainz begann, ist heute ein zuverlässiger Partner für über <span className="font-semibold text-accent-orange-600">100.000 Kunden</span> deutschlandweit. Unser Erfolgsrezept: <span className="font-semibold text-gray-900">Erstklassige Qualität</span> zu fairen Preisen, <span className="font-semibold text-gray-900">persönlicher Service</span> und ein erfahrenes Team mit über <span className="font-semibold text-primary-600">20 Jahren Erfahrung</span>. Als bundesweit agierendes Unternehmen kennen wir die Bedürfnisse unserer Kunden genau und leisten einen wichtigen Beitrag zur Energieversorgung in ganz Deutschland.
             </p>
           </div>
 
