@@ -64,10 +64,12 @@ const ReviewsSection = () => {
 
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-white via-accent-orange-50/30 to-primary-50/20 relative overflow-hidden">
+      {/* Warm gradient line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-orange-300/50 to-transparent" />
       {/* Background elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary-100/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-accent-orange-100/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent-orange-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary-200/25 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
