@@ -124,9 +124,9 @@ const HeroSection = () => {
                       stopOnMouseEnter: true,
                     })
                   ]}
-                  className="w-full"
+                  className="w-full overflow-visible"
                 >
-                  <CarouselContent className="-ml-0">
+                  <CarouselContent className="-ml-0 py-4 -my-4">
                     {uspData.map((usp, index) => {
                       const colorClasses = {
                         primary: {
