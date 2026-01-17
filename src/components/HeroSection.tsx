@@ -174,7 +174,7 @@ const HeroSection = () => {
                 key={index}
                 onClick={() => setCurrent(index)}
                 className={cn(
-                  "rounded-full transition-all duration-300",
+                  "carousel-dot rounded-full transition-all duration-300",
                   current === index 
                     ? "w-3 h-1 bg-primary-500/80" 
                     : "w-1 h-1 bg-gray-300/50 hover:bg-gray-400/60"
