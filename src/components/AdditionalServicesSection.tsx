@@ -1,8 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Bell, Clock, Truck, Map } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Bell, Clock, Truck, Map, Sparkles, CheckCircle } from 'lucide-react';
 
 const AdditionalServicesSection = () => {
   const additionalServices = [
@@ -16,7 +14,8 @@ const AdditionalServicesSection = () => {
         'Kostenlose Beratung zur optimalen Bestellmenge',
         'Dokumentation für Ihre Unterlagen'
       ],
-      price: 'Kostenlos bei Bestellung'
+      price: 'Kostenlos bei Bestellung',
+      gradient: 'from-primary-500 to-primary-600'
     },
     {
       icon: Clock,
@@ -28,7 +27,8 @@ const AdditionalServicesSection = () => {
         'Mindestmenge bereits ab 300 Liter',
         'Telefonische Hotline rund um die Uhr'
       ],
-      price: 'Aufpreis 15€/100L'
+      price: 'Aufpreis 15€/100L',
+      gradient: 'from-accent-orange-400 to-accent-orange-500'
     },
     {
       icon: Bell,
@@ -40,7 +40,8 @@ const AdditionalServicesSection = () => {
         'Marktanalyse und Preistrends',
         'Optimaler Kaufzeitpunkt-Empfehlung'
       ],
-      price: 'Kostenloser Service'
+      price: 'Kostenloser Service',
+      gradient: 'from-primary-600 to-accent-orange-500'
     },
     {
       icon: Truck,
@@ -52,53 +53,67 @@ const AdditionalServicesSection = () => {
         'Koordination der Liefertermine',
         'Abrechnung nach individuellen Mengen'
       ],
-      price: 'Rabatt bis 10%'
+      price: 'Rabatt bis 10%',
+      gradient: 'from-primary-500 to-primary-700'
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Zusätzliche Services
+    <section className="py-24 bg-gradient-to-br from-primary-50/20 via-white to-accent-orange-50/30 relative overflow-hidden">
+      {/* Animated Blur Orbs */}
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary-200/25 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-accent-orange-200/30 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-orange-50 border border-accent-orange-100 rounded-full text-accent-orange-700 text-sm font-semibold mb-6 shadow-sm">
+            <Sparkles className="w-4 h-4" />
+            <span>Mehr als nur Lieferung</span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Zusätzliche <span className="gradient-text-premium">Services</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Mehr als nur Heizöllieferung - wir bieten Ihnen umfassende Serviceleistungen 
             für Ihre optimale Heizölversorgung.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {additionalServices.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-                <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div 
+                key={index} 
+                className="premium-card rounded-2xl p-8 group hover:scale-[1.02] transition-all duration-300"
+              >
+                <div className="flex items-start gap-5 mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow flex-shrink-0`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="border-t pt-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-primary-600">
-                        {service.price}
-                      </span>
-                    </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-1 text-gray-900">{service.title}</h3>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+                
+                <ul className="space-y-3 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3 text-sm">
+                      <CheckCircle className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="pt-4 border-t border-gray-100">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-50 to-accent-orange-50 rounded-full text-sm font-semibold text-primary-700 border border-primary-100">
+                    {service.price}
+                  </span>
+                </div>
+              </div>
             );
           })}
         </div>
