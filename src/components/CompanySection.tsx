@@ -31,22 +31,19 @@ const CompanySection = () => {
 
   const values = [
     {
-      emoji: '🏆',
+      number: '01',
       title: 'Qualität',
-      description: 'Wir liefern ausschließlich geprüftes Premium-Heizöl nach DIN-Norm für optimale Heizleistung und Effizienz.',
-      gradient: 'from-blue-500/10 to-blue-600/10'
+      description: 'Wir liefern ausschließlich geprüftes Premium-Heizöl nach DIN-Norm für optimale Heizleistung und Effizienz.'
     },
     {
-      emoji: '🤝',
+      number: '02',
       title: 'Vertrauen',
-      description: 'Zuverlässigkeit und Transparenz sind die Grundpfeiler unseres Geschäfts. Darauf können Sie sich verlassen.',
-      gradient: 'from-primary-500/10 to-primary-600/10'
+      description: 'Zuverlässigkeit und Transparenz sind die Grundpfeiler unseres Geschäfts. Darauf können Sie sich verlassen.'
     },
     {
-      emoji: '💚',
+      number: '03',
       title: 'Service',
-      description: 'Persönlicher Kundenservice und individuelle Beratung stehen bei uns an erster Stelle.',
-      gradient: 'from-accent-orange-500/10 to-accent-orange-600/10'
+      description: 'Persönlicher Kundenservice und individuelle Beratung stehen bei uns an erster Stelle.'
     }
   ];
 
@@ -117,30 +114,31 @@ const CompanySection = () => {
           })}
         </div>
 
-        {/* Values Section */}
-        <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-primary-100 to-accent-orange-100 rounded-3xl blur-xl opacity-30" />
+        {/* Values Section - Minimalistisches Design */}
+        <div className="mt-8">
+          <h3 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-16">
+            Unsere <span className="gradient-text-premium">Werte</span>
+          </h3>
           
-          <div className="relative glass-card rounded-2xl p-10 lg:p-14">
-            <h3 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12">
-              Unsere <span className="gradient-text-premium">Werte</span>
-            </h3>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
-                <div key={index} className="group text-center">
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${value.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-300`}>
-                    <span className="text-4xl">{value.emoji}</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+            {values.map((value, index) => (
+              <div key={index} className="group relative pt-4">
+                {/* Große Nummer im Hintergrund */}
+                <span className="absolute -top-6 -left-2 text-8xl lg:text-9xl font-bold text-gray-100 select-none pointer-events-none group-hover:text-primary-100 transition-colors duration-500">
+                  {value.number}
+                </span>
+                
+                {/* Content mit vertikaler Linie */}
+                <div className="relative pl-6 border-l-4 border-gray-200 group-hover:border-primary-500 transition-all duration-300">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight uppercase group-hover:text-primary-600 transition-colors duration-300">
                     {value.title}
                   </h4>
                   <p className="text-gray-600 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
