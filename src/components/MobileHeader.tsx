@@ -11,28 +11,27 @@ const MobileHeader = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 lg:hidden">
+    <header className="bg-white shadow-sm sticky top-0 z-50 lg:hidden">
       <div className="container mx-auto px-4">
         {/* Main Header */}
-        <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center">
+        <div className="relative flex items-center py-4">
+          {/* Hamburger Icon - Links */}
+          <button
+            onClick={toggleMenu}
+            className="p-2 text-gray-700 hover:text-primary-600 transition-colors"
+            aria-label="Menü öffnen"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Logo - Mittig zentriert */}
+          <Link to="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
             <img 
               src="/lovable-uploads/bioheat-logo.png" 
               alt="BIO HEAT Nord" 
-              className="h-12"
+              className="h-8"
             />
           </Link>
-
-          {/* Quick Actions */}
-          <div className="flex items-center space-x-2">
-            <button
-              onClick={toggleMenu}
-              className="p-2 border border-gray-300 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center"
-              aria-label="Menü öffnen"
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
         </div>
 
         {/* Handelsblatt Banner */}
