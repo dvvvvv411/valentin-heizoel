@@ -64,7 +64,7 @@ const ReviewsSection = () => {
 
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-accent-orange-50/30 to-primary-50/20 relative overflow-hidden">
+    <section className="pt-24 pb-12 bg-gradient-to-br from-white via-accent-orange-50/30 to-primary-50/20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-accent-orange-200/30 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary-200/25 rounded-full blur-3xl" />
