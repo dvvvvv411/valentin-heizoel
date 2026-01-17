@@ -106,8 +106,8 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Über Valentin Heizöl | Ihr zuverlässiger Heizöl-Partner</title>
-        <meta name="description" content="Erfahren Sie mehr über die Valentin GmbH. Qualität, Service und Nachhaltigkeit seit 2007. Ihr Partner für Heizöl in Deutschland." />
+        <title>Über uns | Valentin Heizöl - Seit 2007 Ihr Partner für Heizöl</title>
+        <meta name="description" content="Lernen Sie die Valentin GmbH kennen: Über 18 Jahre Erfahrung, 100.000+ zufriedene Kunden und deutschlandweite Lieferung. Qualität, Service und faire Preise aus Mainz." />
       </Helmet>
       <Header />
 

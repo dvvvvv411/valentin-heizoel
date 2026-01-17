@@ -8,8 +8,8 @@ const Datenschutz = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Datenschutzerklärung | Valentin Heizöl</title>
-        <meta name="description" content="Datenschutzerklärung von Valentin Heizöl. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
+        <title>Datenschutzerklärung | Valentin Heizöl - DSGVO-konform</title>
+        <meta name="description" content="Datenschutzerklärung der Valentin GmbH gemäß DSGVO. Informationen zur Datenverarbeitung, Ihren Rechten und Kontaktmöglichkeiten für Datenschutzanfragen." />
       </Helmet>
       <Header />
 

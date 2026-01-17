@@ -12,8 +12,8 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Valentin Heizöl Lieferservice | Deutschlandweite Heizöl-Lieferung</title>
-        <meta name="description" content="Professioneller Heizöl-Lieferservice in ganz Deutschland. Tankwagenlieferung, Schlauchverlegung, Ölstandsmessung. Schnell, zuverlässig und sicher." />
+        <title>Heizöl-Lieferservice | Tankwagen-Lieferung deutschlandweit - Valentin Heizöl</title>
+        <meta name="description" content="Professioneller Heizöl-Lieferservice: Tankwagenlieferung, Schlauchverlegung bis 50m, Ölstandsmessung. ✓ Schnell ✓ Zuverlässig ✓ Sicher. Jetzt Termin anfragen!" />
       </Helmet>
       <Header />
       <ServiceHero />

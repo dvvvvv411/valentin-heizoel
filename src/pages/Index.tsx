@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Valentin Heizöl - Heizöl deutschlandweit günstig bestellen | Ab 60 Cent/L</title>
-        <meta name="description" content="✓ Heizöl deutschlandweit ab 60 Cent/Liter ✓ Kostenlose Lieferung ab 500L ✓ Premium-Qualität ✓ Schnelle Lieferung in 2-3 Werktagen ✓ Jetzt Preis berechnen!" />
+        <title>Valentin Heizöl | Günstig bestellen & schnell geliefert - Deutschlandweit</title>
+        <meta name="description" content="Heizöl günstig online bestellen bei Valentin Heizöl. ✓ Deutschlandweite Lieferung ✓ Premium-Qualität ✓ Faire Preise ✓ Über 100.000 zufriedene Kunden. Jetzt Preis berechnen!" />
       </Helmet>
       <Header />
       <HeroSection />
