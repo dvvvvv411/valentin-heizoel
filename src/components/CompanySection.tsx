@@ -75,30 +75,14 @@ const CompanySection = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
           {/* Company Story */}
-          <div className="space-y-6">
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+          <div className="flex flex-col justify-center h-full">
+            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
               Unsere <span className="text-accent-orange-600">Geschichte</span>
             </h3>
             
-            <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
-              <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-orange-600 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
-                Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden
-                Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen 
-                in Mainz begann, ist heute ein zuverlässiger Partner für über 100.000 
-                Kunden in ganz Deutschland.
-              </p>
-              <p>
-                Unser Erfolgsrezept ist einfach: Wir bieten erstklassige Qualität zu 
-                fairen Preisen und legen dabei größten Wert auf persönlichen Service 
-                und Kundenzufriedenheit. Dabei setzen wir auf modernste Technik und 
-                ein erfahrenes Team mit über 20 Jahren Erfahrung.
-              </p>
-              <p>
-                Als deutschlandweit agierendes Unternehmen kennen wir die Bedürfnisse unserer Kunden 
-                genau und sind stolz darauf, einen Beitrag zur Energieversorgung in 
-                ganz Deutschland zu leisten.
-              </p>
-            </div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Seit der Gründung im Jahr 2007 haben wir uns zu einem der führenden Heizöl-Anbieter in Deutschland entwickelt. Was als Unternehmen in Mainz begann, ist heute ein zuverlässiger Partner für über 100.000 Kunden deutschlandweit. Unser Erfolgsrezept: Erstklassige Qualität zu fairen Preisen, persönlicher Service und ein erfahrenes Team mit über 20 Jahren Erfahrung. Als bundesweit agierendes Unternehmen kennen wir die Bedürfnisse unserer Kunden genau und leisten einen wichtigen Beitrag zur Energieversorgung in ganz Deutschland.
+            </p>
           </div>
 
           {/* Company Image */}
