@@ -27,9 +27,6 @@ const Footer = () => {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-800/30 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-orange-700/25 rounded-full blur-3xl" />
       
-      {/* Top gradient border - warmer */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent-orange-500/60 to-transparent" />
-      
       <div className="container mx-auto px-4 py-16 lg:py-20 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Company Info */}

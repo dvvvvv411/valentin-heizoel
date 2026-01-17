@@ -49,8 +49,6 @@ const BenefitsSection = () => {
 
   return (
     <section className="py-24 bg-gradient-to-br from-accent-orange-50/25 via-white to-primary-50/20 relative overflow-hidden">
-      {/* Warm gradient line at top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-orange-400/40 to-transparent" />
       {/* Subtle background elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/35 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-orange-200/30 rounded-full blur-3xl translate-y-1/2" />
