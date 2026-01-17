@@ -1,6 +1,6 @@
-
 import { Mail, MapPin, Clock, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import valentinLogo from '@/assets/valentin-logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1 space-y-6">
             <img 
-              src="/lovable-uploads/bioheat-logo.png" 
+              src={valentinLogo} 
               alt="Valentin Heizöl" 
               className="h-16 brightness-0 invert opacity-90"
             />
