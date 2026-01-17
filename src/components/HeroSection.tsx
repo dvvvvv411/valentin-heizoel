@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Truck, Clock, ShieldCheck, Users, Award, Headphones, Sparkles } from 'lucide-react';
+import { Truck, Clock, ShieldCheck, Users, Award, Headphones, Sparkles, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import HorizontalPriceCalculator from './HorizontalPriceCalculator';
 import MobilePriceCalculator from './MobilePriceCalculator';
@@ -92,9 +92,25 @@ const HeroSection = () => {
                 <span className="text-gray-700">Deutschlandweit</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
-                Vertrauen Sie auf über 20 Jahre Erfahrung: Wir liefern Ihr Heizöl <span className="text-primary-600 font-bold">ab nur 60 Cent pro Liter</span> – kostenlos ab 1.500 Liter, deutschlandweit in 4-7 Werktagen.
-              </p>
+              <div className="space-y-3 max-w-2xl">
+                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed font-medium">
+                  Vertrauen Sie auf über 20 Jahre Erfahrung
+                </p>
+                <div className="flex flex-col gap-2 text-base lg:text-lg text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                    <span>Heizöl <span className="text-primary-600 font-bold">ab nur 60 Cent pro Liter</span></span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                    <span>Kostenlose Lieferung ab 1.500 Liter</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                    <span>Deutschlandweit in 4-7 Werktagen</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right Column: USP Carousel + Trust Stats */}
