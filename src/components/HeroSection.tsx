@@ -92,8 +92,8 @@ const HeroSection = () => {
                 <span className="text-gray-700">Deutschlandweit</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Kostenlose Lieferung in Deutschland • <span className="text-primary-600 font-bold">Ab 60 Cent pro Liter</span> • Schnell & zuverlässig
+              <p className="text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed">
+                Vertrauen Sie auf über 20 Jahre Erfahrung: Wir liefern Ihr Heizöl <span className="text-primary-600 font-bold">ab nur 60 Cent pro Liter</span> – kostenlos ab 1.500 Liter, deutschlandweit in 4-7 Werktagen.
               </p>
             </div>
 
