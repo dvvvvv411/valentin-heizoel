@@ -73,9 +73,9 @@ const CompanySection = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-          {/* Company Story */}
-          <div className="space-y-6">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center mb-20">
+          {/* Company Story - 40% */}
+          <div className="lg:col-span-2 space-y-6">
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
               Unsere <span className="text-accent-orange-600">Geschichte</span>
             </h3>
@@ -101,13 +101,13 @@ const CompanySection = () => {
             </div>
           </div>
 
-          {/* Company Image */}
-          <div className="relative">
-            <div className="aspect-[4/3] w-full overflow-hidden">
+          {/* Company Image - 60% */}
+          <div className="lg:col-span-3 relative">
+            <div className="w-full overflow-hidden">
               <img 
                 src={shopHeaderImage} 
                 alt="Valentin Heizöl Unternehmen"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                className="w-full h-auto object-contain transition-transform duration-700 hover:scale-105"
               />
             </div>
           </div>
