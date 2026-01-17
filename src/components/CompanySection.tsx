@@ -106,7 +106,7 @@ const CompanySection = () => {
             <img 
               src={shopHeaderImage} 
               alt="Valentin Heizöl Unternehmen"
-              className="max-w-[85%] h-auto object-contain transition-transform duration-700 hover:scale-105"
+              className="max-w-[92%] h-auto object-contain transition-transform duration-700 hover:scale-105"
             />
           </div>
         </div>
