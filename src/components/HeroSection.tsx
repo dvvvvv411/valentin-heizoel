@@ -176,8 +176,8 @@ const HeroSection = () => {
                 className={cn(
                   "carousel-dot rounded-full transition-all duration-300",
                   current === index 
-                    ? "w-3 h-1 bg-primary-500/80" 
-                    : "w-1 h-1 bg-gray-300/50 hover:bg-gray-400/60"
+                    ? "w-5 h-1.5 bg-primary-500/80" 
+                    : "w-1.5 h-1.5 bg-gray-300/50 hover:bg-gray-400/60"
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
