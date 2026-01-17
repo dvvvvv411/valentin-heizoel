@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { scrollToCalculator, scrollToCalculatorFromOtherPage } from '../utils/scrollToCalculator';
+import valentinLogo from '@/assets/valentin-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <Link to="/" className="flex items-center group">
                 <img 
-                  src="/lovable-uploads/bioheat-logo.png" 
+                  src={valentinLogo} 
                   alt="Valentin Heizöl" 
                   className="h-14 transition-transform duration-300 group-hover:scale-105"
                 />
@@ -122,7 +123,7 @@ const Header = () => {
             
             <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/bioheat-logo.png" 
+                src={valentinLogo} 
                 alt="Valentin Heizöl" 
                 className="h-14"
               />
