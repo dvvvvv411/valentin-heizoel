@@ -8,8 +8,8 @@ const Widerrufsrecht = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Widerrufsrecht | Valentin Heizöl</title>
-        <meta name="description" content="Informationen zum Widerrufsrecht bei Heizöl-Bestellungen. Ihre Rechte als Verbraucher bei Valentin Heizöl." />
+        <title>Widerrufsrecht | Ihre Verbraucherrechte - Valentin Heizöl</title>
+        <meta name="description" content="Widerrufsbelehrung für Heizöl-Bestellungen bei Valentin Heizöl. Ihre gesetzlichen Verbraucherrechte, Fristen und Muster-Widerrufsformular." />
       </Helmet>
       <Header />
 

@@ -13,8 +13,8 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Valentin Heizöl Sorten | Standard, Premium & Bio-Heizöl</title>
-        <meta name="description" content="Entdecken Sie unsere Heizöl-Sorten: Standard-Heizöl, Premium mit Additiven und Bio-Heizöl. Technische Daten, Qualitätszertifikate und Lagerungsempfehlungen." />
+        <title>Heizöl-Sorten | Standard, Premium & Bio-Heizöl - Valentin Heizöl</title>
+        <meta name="description" content="Unsere Heizöl-Qualitäten im Vergleich: Standard-Heizöl, Premium mit Additiven und Bio-Heizöl. ✓ DIN-zertifiziert ✓ Technische Daten ✓ Lagerungsempfehlungen." />
       </Helmet>
       <Header />
       <ProductHero />

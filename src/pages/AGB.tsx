@@ -9,7 +9,7 @@ const AGB = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>AGB | Allgemeine Geschäftsbedingungen - Valentin Heizöl</title>
-        <meta name="description" content="Allgemeine Geschäftsbedingungen der Valentin GmbH für Heizöl-Bestellungen und Lieferungen." />
+        <meta name="description" content="Allgemeine Geschäftsbedingungen der Valentin GmbH für Heizöl-Bestellungen: Lieferbedingungen, Zahlungsarten, Gewährleistung und rechtliche Hinweise." />
       </Helmet>
       <Header />
 

@@ -8,8 +8,8 @@ const Impressum = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Impressum | Valentin GmbH</title>
-        <meta name="description" content="Impressum und Kontaktdaten der Valentin GmbH, Mainz. Alle rechtlichen Informationen und Unternehmensangaben." />
+        <title>Impressum | Valentin GmbH - Heizöl-Anbieter aus Mainz</title>
+        <meta name="description" content="Impressum der Valentin GmbH, Rheinallee 187, 55120 Mainz. Rechtliche Angaben, Kontaktdaten und Unternehmensregistrierung gemäß § 5 TMG." />
       </Helmet>
       <Header />
 
