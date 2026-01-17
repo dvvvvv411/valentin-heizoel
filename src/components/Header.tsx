@@ -111,51 +111,26 @@ const Header = () => {
       </header>
 
       {/* Mobile Header */}
-      <header className={cn(
-        "fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-500",
-        isScrolled 
-          ? "bg-white/95 backdrop-blur-xl shadow-lg" 
-          : "bg-transparent"
-      )}>
+      <header className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-white shadow-sm">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex-1"></div>
-            
-            <Link to="/" className="flex items-center">
+          <div className="relative flex items-center py-4">
+            {/* Hamburger Icon - Links */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-700 hover:text-primary-600 transition-colors"
+              aria-label="Menü öffnen"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {/* Logo - Mittig zentriert */}
+            <Link to="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
               <img 
                 src={valentinLogo} 
                 alt="Valentin Heizöl" 
-                className="h-14"
+                className="h-8"
               />
             </Link>
-
-            <div className="flex-1 flex justify-end">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={cn(
-                  "p-3 rounded-xl min-w-[48px] min-h-[48px] flex items-center justify-center transition-all duration-300",
-                  isMenuOpen 
-                    ? "bg-primary-50 text-primary-600 border border-primary-200" 
-                    : "bg-white/80 border border-gray-200 hover:border-primary-300 hover:bg-primary-50"
-                )}
-                aria-label="Menü öffnen"
-              >
-                <div className="relative w-5 h-5">
-                  <span className={cn(
-                    "absolute left-0 block w-5 h-0.5 bg-current transition-all duration-300",
-                    isMenuOpen ? "top-2 rotate-45" : "top-0.5"
-                  )} />
-                  <span className={cn(
-                    "absolute left-0 top-2 block w-5 h-0.5 bg-current transition-all duration-300",
-                    isMenuOpen ? "opacity-0" : "opacity-100"
-                  )} />
-                  <span className={cn(
-                    "absolute left-0 block w-5 h-0.5 bg-current transition-all duration-300",
-                    isMenuOpen ? "top-2 -rotate-45" : "top-3.5"
-                  )} />
-                </div>
-              </button>
-            </div>
           </div>
 
           {/* Mobile Navigation Menu */}
