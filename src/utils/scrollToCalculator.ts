@@ -4,7 +4,7 @@ export const scrollToCalculator = () => {
   if (calculatorElement) {
     calculatorElement.scrollIntoView({ 
       behavior: 'smooth',
-      block: 'start'
+      block: 'center'
     });
   } else {
     // If not on home page, navigate to home page with calculator hash
