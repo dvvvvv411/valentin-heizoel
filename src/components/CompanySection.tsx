@@ -49,8 +49,6 @@ const CompanySection = () => {
 
   return (
     <section id="ueber-uns" className="py-24 bg-gradient-to-br from-primary-50/30 via-white to-accent-orange-50/25 relative overflow-hidden">
-      {/* Warm gradient line at top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/40 to-transparent" />
       {/* Background elements */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl -translate-x-1/2" />
       <div className="absolute bottom-1/3 right-0 w-80 h-80 bg-accent-orange-200/25 rounded-full blur-3xl translate-x-1/2" />
