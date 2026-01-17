@@ -143,39 +143,6 @@ const ReviewsSection = () => {
             </div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <div className="relative">
-          <div className="absolute -inset-2 bg-gradient-to-r from-primary-500 to-accent-orange-500 rounded-3xl blur-xl opacity-20" />
-          
-          <div className="relative mesh-gradient rounded-2xl p-10 lg:p-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-orange-500/10 rounded-full blur-3xl" />
-            
-            <div className="relative text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/80 text-sm font-medium mb-6 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4" />
-                Werden Sie Teil unserer Community
-              </div>
-              
-              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-5 leading-tight">
-                Werden auch Sie Teil unserer zufriedenen Kunden!
-              </h3>
-              <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-                Überzeugen Sie sich selbst von unserem erstklassigen Service und unseren fairen Preisen.
-              </p>
-              
-              <button 
-                onClick={scrollToCalculator}
-                className="group inline-flex items-center gap-3 bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-premium"
-              >
-                Jetzt Preis berechnen
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
