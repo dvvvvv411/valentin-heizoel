@@ -1,13 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Truck, Clock, ShieldCheck, Users, Award, Headphones, Sparkles } from 'lucide-react';
-import Autoplay from 'embla-carousel-autoplay';
-import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import HorizontalPriceCalculator from './HorizontalPriceCalculator';
 import MobilePriceCalculator from './MobilePriceCalculator';
 
 const HeroSection = () => {
-  const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   const uspData = [
@@ -41,21 +38,15 @@ const HeroSection = () => {
     }
   ];
 
-  const onSelect = useCallback(() => {
-    if (!api) return;
-    setCurrent(api.selectedScrollSnap());
-  }, [api]);
+  const uspCount = uspData.length;
 
+  // Auto-rotation for USP content
   useEffect(() => {
-    if (!api) return;
-    onSelect();
-    api.on('select', onSelect);
-    api.on('reInit', onSelect);
-    return () => {
-      api.off('select', onSelect);
-      api.off('reInit', onSelect);
-    };
-  }, [api, onSelect]);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % uspCount);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [uspCount]);
 
   const trustStats = [
     { icon: Users, value: '100.000+', label: 'Kunden', color: 'primary' },
@@ -108,25 +99,18 @@ const HeroSection = () => {
 
             {/* Right Column: USP Carousel + Trust Stats */}
             <div className="space-y-6">
-              {/* USP Carousel - Auto-Playing */}
+              {/* USP Card - Static with Content Animation */}
               <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <Carousel
-                  setApi={setApi}
-                  opts={{
-                    align: "center",
-                    loop: true,
-                    duration: 35,
-                  }}
-                  plugins={[
-                    Autoplay({
-                      delay: 5000,
-                      stopOnInteraction: false,
-                      stopOnMouseEnter: true,
-                    })
-                  ]}
-                  className="w-full overflow-visible"
-                >
-                  <CarouselContent className="-ml-0">
+                <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+                  {/* Decorative Header - STATIC */}
+                  <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+                    <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
+                    Unser Versprechen
+                    <span className="w-8 h-px bg-gradient-to-r from-accent-orange-400 to-primary-400" />
+                  </p>
+                  
+                  {/* Animated Content Container */}
+                  <div className="relative min-h-[180px]">
                     {uspData.map((usp, index) => {
                       const colorClasses = {
                         primary: {
@@ -146,52 +130,51 @@ const HeroSection = () => {
                         }
                       };
                       const colors = colorClasses[usp.color as keyof typeof colorClasses];
+                      const isActive = current === index;
                       
                       return (
-                        <CarouselItem key={index} className="pl-0">
-                          {/* Clean Card - matching Trust Statistics styling */}
-                          <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                            {/* Decorative Header */}
-                            <p className="text-xs text-gray-500 mb-5 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
-                              <span className="w-8 h-px bg-gradient-to-r from-primary-400 to-accent-orange-400" />
-                              Unser Versprechen
-                              <span className="w-8 h-px bg-gradient-to-r from-accent-orange-400 to-primary-400" />
-                            </p>
-                            
-                            {/* Centered Icon - clean without pulse */}
-                            <div className="flex justify-center mb-4">
-                              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-md ${colors.iconShadow}`}>
-                                <usp.icon className="w-7 h-7 text-white" />
-                              </div>
+                        <div 
+                          key={index}
+                          className={cn(
+                            "absolute inset-0 transition-all duration-500 ease-in-out",
+                            isActive 
+                              ? "opacity-100 translate-y-0" 
+                              : "opacity-0 translate-y-4 pointer-events-none"
+                          )}
+                        >
+                          {/* Icon */}
+                          <div className="flex justify-center mb-4">
+                            <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colors.gradient} flex items-center justify-center shadow-md ${colors.iconShadow}`}>
+                              <usp.icon className="w-7 h-7 text-white" />
                             </div>
-                            
-                            {/* Title + Subtitle centered */}
-                            <div className="text-center mb-2">
-                              <div className="text-lg font-bold text-gray-800">{usp.title}</div>
-                              <div className={`text-base font-semibold bg-gradient-to-r ${colors.text} bg-clip-text text-transparent`}>
-                                {usp.subtitle}
-                              </div>
-                            </div>
-                            
-                            {/* Description */}
-                            <p className="text-sm text-gray-500 text-center leading-relaxed">
-                              {usp.description}
-                            </p>
                           </div>
-                        </CarouselItem>
+                          
+                          {/* Title + Subtitle */}
+                          <div className="text-center mb-2">
+                            <div className="text-lg font-bold text-gray-800">{usp.title}</div>
+                            <div className={`text-base font-semibold bg-gradient-to-r ${colors.text} bg-clip-text text-transparent`}>
+                              {usp.subtitle}
+                            </div>
+                          </div>
+                          
+                          {/* Description */}
+                          <p className="text-sm text-gray-500 text-center leading-relaxed">
+                            {usp.description}
+                          </p>
+                        </div>
                       );
                     })}
-                  </CarouselContent>
-                </Carousel>
+                  </div>
+                </div>
                 
-                {/* Pagination Dots - Tiny and subtle */}
+                {/* Pagination Dots */}
                 <div className="flex justify-center gap-1.5 mt-4">
                   {uspData.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => api?.scrollTo(index)}
+                      onClick={() => setCurrent(index)}
                       className={cn(
-                        "carousel-dot rounded-full transition-all duration-300 !min-h-0 !min-w-0",
+                        "rounded-full transition-all duration-300",
                         current === index 
                           ? "h-1.5 w-4 bg-primary-500" 
                           : "w-1.5 h-1.5 bg-gray-300/60 hover:bg-gray-400/80"
