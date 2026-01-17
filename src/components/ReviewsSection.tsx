@@ -62,9 +62,6 @@ const ReviewsSection = () => {
     calculatorElement?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const getInitials = (name: string) => {
-    return name.charAt(0).toUpperCase();
-  };
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
@@ -114,8 +111,8 @@ const ReviewsSection = () => {
               
               {/* Header */}
               <div className="flex items-start justify-between mb-5">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">{getInitials(review.name)}</span>
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <Quote className="w-6 h-6 text-primary-600" />
                 </div>
                 <div className="flex gap-0.5">
                   {renderStars(review.rating)}
