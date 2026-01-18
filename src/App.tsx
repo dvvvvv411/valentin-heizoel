@@ -16,6 +16,7 @@ import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Widerrufsrecht from "./pages/Widerrufsrecht";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <CookieConsent />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/ueber-uns" element={<AboutUs />} />
