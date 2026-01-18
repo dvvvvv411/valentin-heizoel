@@ -37,7 +37,7 @@ const MobilePriceCalculator = () => {
     }
   ];
 
-  const shopId = "93d86228-d5ca-4288-9279-83d91efa1e35";
+  const shopId = "5cb5aa20-02d3-4297-a799-19cf1b238a1d";
   const currentPrice = prices[oilType];
   const litersNum = parseInt(liters) || 0;
   const canCalculate = liters !== '' && litersNum >= 1500 && litersNum <= 32000;
