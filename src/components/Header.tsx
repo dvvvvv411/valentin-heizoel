@@ -45,10 +45,10 @@ const Header = () => {
           )}>
             <div className="flex justify-between items-center text-sm text-gray-600">
               <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2">
+                <a href="tel:+4961316365855" className="flex items-center space-x-2 hover:text-primary-600 transition-colors">
                   <Phone size={14} className="text-accent-orange-500" />
-                  <a href="tel:+4961316365855" className="hover:text-primary-600 transition-colors">06131-6365855</a>
-                </div>
+                  <span>06131-6365855</span>
+                </a>
                 <div className="flex items-center space-x-2">
                   <Bell size={14} className="text-accent-orange-500" />
                   <span>info@valentin-heizoel.de</span>
