@@ -1,4 +1,4 @@
-import { Mail, MapPin, Clock, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Clock, ArrowUpRight, Sparkles, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import valentinLogo from '@/assets/valentin-logo.png';
 
@@ -66,6 +66,12 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-lg font-semibold text-white">Kontakt</h3>
             <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-400">
+                <div className="w-10 h-10 rounded-xl bg-primary-900/50 flex items-center justify-center">
+                  <Phone size={18} className="text-primary-400" />
+                </div>
+                <a href="tel:+4961316365855" className="hover:text-white transition-colors">06131-6365855</a>
+              </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <div className="w-10 h-10 rounded-xl bg-primary-900/50 flex items-center justify-center">
                   <Mail size={18} className="text-primary-400" />

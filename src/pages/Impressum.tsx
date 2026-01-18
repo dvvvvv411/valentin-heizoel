@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Mail, MapPin } from 'lucide-react';
+import { Building, Mail, MapPin, Phone } from 'lucide-react';
 
 const Impressum = () => {
   return (
@@ -72,6 +72,14 @@ const Impressum = () => {
                       55120 Mainz<br />
                       Deutschland
                     </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <Phone className="text-primary-600" size={20} />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Telefon:</h3>
+                    <p className="text-gray-700">06131-6365855</p>
                   </div>
                 </div>
                 
