@@ -1,7 +1,6 @@
 
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
-import NewYearBanner from '../components/NewYearBanner';
 import HeroSection from '../components/HeroSection';
 
 import ReviewsSection from '../components/ReviewsSection';
@@ -16,7 +15,6 @@ const Index = () => {
         <meta name="description" content="Heizöl günstig online bestellen bei Valentin Heizöl. ✓ Deutschlandweite Lieferung ✓ Premium-Qualität ✓ Faire Preise ✓ Über 100.000 zufriedene Kunden. Jetzt Preis berechnen!" />
       </Helmet>
       <Header />
-      <NewYearBanner />
       <HeroSection />
       
       <ReviewsSection />
